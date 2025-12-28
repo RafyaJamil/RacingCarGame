@@ -1,0 +1,633 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Semester 2\\OOP Lab\\Game\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\racingcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\racingcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\racingcar.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\racingcar.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|C:\\Semester 2\\OOP Lab\\Game\\game\\racingcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\racingcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\interfaces\\imovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\interfaces\\imovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\movements\\keyboardmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\movements\\keyboardmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\entities\\energybooster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\entities\\energybooster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\entities\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\entities\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\systems\\collisionsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\systems\\collisionsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\core\\audiotrack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\core\\audiotrack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\interfaces\\iaudio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\interfaces\\iaudio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\component\\audio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\component\\audio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\interfaces\\ianimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\interfaces\\ianimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\component\\animator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\component\\animator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\entities\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\entities\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Semester 2\\GameFramework-OOP-Course\\GameFramework-OOP-Course\\GameForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\core\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\core\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\core\\gametime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\core\\gametime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\core\\spriteanimationtrack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\core\\spriteanimationtrack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\extensions\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\extensions\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\extensions\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\extensions\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\interfaces\\iupdatable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\interfaces\\iupdatable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\interfaces\\iphysicsobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\interfaces\\iphysicsobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\interfaces\\imovable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\interfaces\\imovable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\interfaces\\idrawable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\interfaces\\idrawable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\interfaces\\icollidable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\interfaces\\icollidable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\systems\\physicssystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\systems\\physicssystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\movements\\zigzagmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\movements\\zigzagmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\movements\\verticalmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\movements\\verticalmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\movements\\randompatrolmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\movements\\randompatrolmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\movements\\patrolmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\movements\\patrolmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\movements\\jumpingmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\movements\\jumpingmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\movements\\horizontalmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\movements\\horizontalmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\movements\\chasemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\movements\\chasemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Semester 2\\GameFramework-OOP-Course\\GameFramework-OOP-Course\\Movements\\RandomPatrolMovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Semester 2\\GameFramework-OOP-Course\\GameFramework-OOP-Course\\Component\\Animator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RacingCar.cs [Design]",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\RacingCar.cs",
+              "RelativeDocumentMoniker": "Game\\RacingCar.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\RacingCar.cs [Design]*",
+              "RelativeToolTip": "Game\\RacingCar.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T23:31:42.727Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RacingCar.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\RacingCar.cs",
+              "RelativeDocumentMoniker": "Game\\RacingCar.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\RacingCar.cs*",
+              "RelativeToolTip": "Game\\RacingCar.cs*",
+              "ViewState": "AgIAAJsAAAAAAAAAAAAswK8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T23:34:42.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RacingCar.Designer.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\RacingCar.Designer.cs",
+              "RelativeDocumentMoniker": "Game\\RacingCar.Designer.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\RacingCar.Designer.cs",
+              "RelativeToolTip": "Game\\RacingCar.Designer.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T06:57:52.686Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IMovement.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Interfaces\\IMovement.cs",
+              "RelativeDocumentMoniker": "Game\\Interfaces\\IMovement.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Interfaces\\IMovement.cs",
+              "RelativeToolTip": "Game\\Interfaces\\IMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:18:35.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Resources.resx",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Properties\\Resources.resx",
+              "RelativeDocumentMoniker": "Game\\Properties\\Resources.resx",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Properties\\Resources.resx",
+              "RelativeToolTip": "Game\\Properties\\Resources.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-12-28T00:32:12.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Entities\\Enemy.cs",
+              "RelativeDocumentMoniker": "Game\\Entities\\Enemy.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Entities\\Enemy.cs",
+              "RelativeToolTip": "Game\\Entities\\Enemy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:16:06.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "KeyboardMovement.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\KeyboardMovement.cs",
+              "RelativeDocumentMoniker": "Game\\Movements\\KeyboardMovement.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\KeyboardMovement.cs",
+              "RelativeToolTip": "Game\\Movements\\KeyboardMovement.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwBQAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:21:11.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CollisionSystem.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Systems\\CollisionSystem.cs",
+              "RelativeDocumentMoniker": "Game\\Systems\\CollisionSystem.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Systems\\CollisionSystem.cs",
+              "RelativeToolTip": "Game\\Systems\\CollisionSystem.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAADwv4EAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:22:48.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EnergyBooster.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Entities\\EnergyBooster.cs",
+              "RelativeDocumentMoniker": "Game\\Entities\\EnergyBooster.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Entities\\EnergyBooster.cs",
+              "RelativeToolTip": "Game\\Entities\\EnergyBooster.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T04:47:14.642Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AudioTrack.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Core\\AudioTrack.cs",
+              "RelativeDocumentMoniker": "Game\\Core\\AudioTrack.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Core\\AudioTrack.cs",
+              "RelativeToolTip": "Game\\Core\\AudioTrack.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T04:04:14.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IAudio.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Interfaces\\IAudio.cs",
+              "RelativeDocumentMoniker": "Game\\Interfaces\\IAudio.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Interfaces\\IAudio.cs",
+              "RelativeToolTip": "Game\\Interfaces\\IAudio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T04:12:10.906Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Audio.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Component\\Audio.cs",
+              "RelativeDocumentMoniker": "Game\\Component\\Audio.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Component\\Audio.cs",
+              "RelativeToolTip": "Game\\Component\\Audio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T03:52:38.965Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IAnimator.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Interfaces\\IAnimator.cs",
+              "RelativeDocumentMoniker": "Game\\Interfaces\\IAnimator.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Interfaces\\IAnimator.cs",
+              "RelativeToolTip": "Game\\Interfaces\\IAnimator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:19:32.305Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Animator.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Component\\Animator.cs",
+              "RelativeDocumentMoniker": "Game\\Component\\Animator.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Component\\Animator.cs",
+              "RelativeToolTip": "Game\\Component\\Animator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:27:10.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Entities\\Player.cs",
+              "RelativeDocumentMoniker": "Game\\Entities\\Player.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Entities\\Player.cs",
+              "RelativeToolTip": "Game\\Entities\\Player.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwC0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:17:21.51Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "GameObject.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Entities\\GameObject.cs",
+              "RelativeDocumentMoniker": "Game\\Entities\\GameObject.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Entities\\GameObject.cs",
+              "RelativeToolTip": "Game\\Entities\\GameObject.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAYwEIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:16:16.78Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Program.cs",
+              "RelativeDocumentMoniker": "Game\\Program.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Program.cs",
+              "RelativeToolTip": "Game\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T23:39:14.667Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "GameForm.cs",
+              "DocumentMoniker": "C:\\Semester 2\\GameFramework-OOP-Course\\GameFramework-OOP-Course\\GameForm.cs",
+              "RelativeDocumentMoniker": "..\\..\\GameFramework-OOP-Course\\GameFramework-OOP-Course\\GameForm.cs",
+              "ToolTip": "C:\\Semester 2\\GameFramework-OOP-Course\\GameFramework-OOP-Course\\GameForm.cs",
+              "RelativeToolTip": "..\\..\\GameFramework-OOP-Course\\GameFramework-OOP-Course\\GameForm.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAIBJwEMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T23:36:15.865Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Core\\Game.cs",
+              "RelativeDocumentMoniker": "Game\\Core\\Game.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Core\\Game.cs",
+              "RelativeToolTip": "Game\\Core\\Game.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:15:01.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "GameTime.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Core\\GameTime.cs",
+              "RelativeDocumentMoniker": "Game\\Core\\GameTime.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Core\\GameTime.cs",
+              "RelativeToolTip": "Game\\Core\\GameTime.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:15:47.665Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "SpriteAnimationTrack.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Core\\SpriteAnimationTrack.cs",
+              "RelativeDocumentMoniker": "Game\\Core\\SpriteAnimationTrack.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Core\\SpriteAnimationTrack.cs",
+              "RelativeToolTip": "Game\\Core\\SpriteAnimationTrack.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:25:51.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "PowerUp.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Extensions\\PowerUp.cs",
+              "RelativeDocumentMoniker": "Game\\Extensions\\PowerUp.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Extensions\\PowerUp.cs",
+              "RelativeToolTip": "Game\\Extensions\\PowerUp.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:17:43.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Bullet.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Extensions\\Bullet.cs",
+              "RelativeDocumentMoniker": "Game\\Extensions\\Bullet.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Extensions\\Bullet.cs",
+              "RelativeToolTip": "Game\\Extensions\\Bullet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:17:32.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IUpdatable.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Interfaces\\IUpdatable.cs",
+              "RelativeDocumentMoniker": "Game\\Interfaces\\IUpdatable.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Interfaces\\IUpdatable.cs",
+              "RelativeToolTip": "Game\\Interfaces\\IUpdatable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:19:02.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "IPhysicsObject.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Interfaces\\IPhysicsObject.cs",
+              "RelativeDocumentMoniker": "Game\\Interfaces\\IPhysicsObject.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Interfaces\\IPhysicsObject.cs",
+              "RelativeToolTip": "Game\\Interfaces\\IPhysicsObject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:18:49.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "IMovable.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Interfaces\\IMovable.cs",
+              "RelativeDocumentMoniker": "Game\\Interfaces\\IMovable.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Interfaces\\IMovable.cs",
+              "RelativeToolTip": "Game\\Interfaces\\IMovable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:18:24.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "IDrawable.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Interfaces\\IDrawable.cs",
+              "RelativeDocumentMoniker": "Game\\Interfaces\\IDrawable.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Interfaces\\IDrawable.cs",
+              "RelativeToolTip": "Game\\Interfaces\\IDrawable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:18:15.35Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ICollidable.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Interfaces\\ICollidable.cs",
+              "RelativeDocumentMoniker": "Game\\Interfaces\\ICollidable.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Interfaces\\ICollidable.cs",
+              "RelativeToolTip": "Game\\Interfaces\\ICollidable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:18:03.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "PhysicsSystem.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Systems\\PhysicsSystem.cs",
+              "RelativeDocumentMoniker": "Game\\Systems\\PhysicsSystem.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Systems\\PhysicsSystem.cs",
+              "RelativeToolTip": "Game\\Systems\\PhysicsSystem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwCoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:23:11.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ZigzagMovement.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\ZigzagMovement.cs",
+              "RelativeDocumentMoniker": "Game\\Movements\\ZigzagMovement.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\ZigzagMovement.cs",
+              "RelativeToolTip": "Game\\Movements\\ZigzagMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:22:26.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "VerticalMovement.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\VerticalMovement.cs",
+              "RelativeDocumentMoniker": "Game\\Movements\\VerticalMovement.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\VerticalMovement.cs",
+              "RelativeToolTip": "Game\\Movements\\VerticalMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAIwBkAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:22:05.688Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "RandomPatrolMovement.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\RandomPatrolMovement.cs",
+              "RelativeDocumentMoniker": "Game\\Movements\\RandomPatrolMovement.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\RandomPatrolMovement.cs",
+              "RelativeToolTip": "Game\\Movements\\RandomPatrolMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:21:49.841Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "PatrolMovement.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\PatrolMovement.cs",
+              "RelativeDocumentMoniker": "Game\\Movements\\PatrolMovement.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\PatrolMovement.cs",
+              "RelativeToolTip": "Game\\Movements\\PatrolMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:21:34.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "JumpingMovement.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\JumpingMovement.cs",
+              "RelativeDocumentMoniker": "Game\\Movements\\JumpingMovement.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\JumpingMovement.cs",
+              "RelativeToolTip": "Game\\Movements\\JumpingMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:20:52.351Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "HorizontalMovement.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\HorizontalMovement.cs",
+              "RelativeDocumentMoniker": "Game\\Movements\\HorizontalMovement.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\HorizontalMovement.cs",
+              "RelativeToolTip": "Game\\Movements\\HorizontalMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:20:36.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ChaseMovement.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\ChaseMovement.cs",
+              "RelativeDocumentMoniker": "Game\\Movements\\ChaseMovement.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\ChaseMovement.cs",
+              "RelativeToolTip": "Game\\Movements\\ChaseMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:20:08.809Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "RandomPatrolMovement.cs",
+              "DocumentMoniker": "C:\\Semester 2\\GameFramework-OOP-Course\\GameFramework-OOP-Course\\Movements\\RandomPatrolMovement.cs",
+              "RelativeDocumentMoniker": "..\\..\\GameFramework-OOP-Course\\GameFramework-OOP-Course\\Movements\\RandomPatrolMovement.cs",
+              "ToolTip": "C:\\Semester 2\\GameFramework-OOP-Course\\GameFramework-OOP-Course\\Movements\\RandomPatrolMovement.cs",
+              "RelativeToolTip": "..\\..\\GameFramework-OOP-Course\\GameFramework-OOP-Course\\Movements\\RandomPatrolMovement.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAIBJwDoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:43:09.246Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Animator.cs",
+              "DocumentMoniker": "C:\\Semester 2\\GameFramework-OOP-Course\\GameFramework-OOP-Course\\Component\\Animator.cs",
+              "RelativeDocumentMoniker": "..\\..\\GameFramework-OOP-Course\\GameFramework-OOP-Course\\Component\\Animator.cs",
+              "ToolTip": "C:\\Semester 2\\GameFramework-OOP-Course\\GameFramework-OOP-Course\\Component\\Animator.cs",
+              "RelativeToolTip": "..\\..\\GameFramework-OOP-Course\\GameFramework-OOP-Course\\Component\\Animator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T19:27:12.631Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
