@@ -1,33 +1,27 @@
 ﻿using Game.Core;
 using Game.Extensions;
 using Game.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Game.Entities
 {
-    internal class Enemy : GameObject
+    internal class Enemy : GameObject, ICollidable
     {
-        // Optional movement behavior: demonstrates composition and allows testable movement logic.
         public IMovement? Movement { get; set; }
 
-        // Default enemy velocity is set in constructor to give basic movement out-of-the-box.
+        public string Tag { get; set; } = "Enemy"; // Add Tag for collision identification
+
         public Enemy()
         {
             Velocity = new PointF(-2, 0);
         }
 
-        /// Update will call movement behavior (if any) and then apply base update to move by velocity.
         public override void Update(GameTime gameTime)
         {
-            Movement?.Move(this, gameTime); // movement must be called
+            Movement?.Move(this, gameTime);
             base.Update(gameTime);
         }
 
-        /// Custom draw: demonstrates polymorphism (override base draw to provide enemy visuals).
         public override void Draw(Graphics g)
         {
             if (Sprite != null)
@@ -35,14 +29,18 @@ namespace Game.Entities
                 g.DrawImage(Sprite, Bounds);
             }
             else
-                g.FillRectangle(Brushes.Red, Bounds); // fallback
+            {
+                g.FillRectangle(Brushes.Red, Bounds);
+            }
         }
 
-        /// On collision, enemy deactivates when hit by bullets (encapsulation of reaction logic inside the entity).
         public override void OnCollision(GameObject other)
         {
+            // Enemy reaction: if hit by bullet, deactivate
             if (other is Bullet)
                 IsActive = false;
+
+            // Optional: collision with player handled by Player.OnCollision
         }
     }
 }

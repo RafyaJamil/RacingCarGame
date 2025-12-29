@@ -25,3 +25,4 @@ C:\Semester 2\OOP Lab\Game\Game\bin\Debug\net8.0-windows\NAudio.Midi.dll
 C:\Semester 2\OOP Lab\Game\Game\bin\Debug\net8.0-windows\NAudio.Wasapi.dll
 C:\Semester 2\OOP Lab\Game\Game\bin\Debug\net8.0-windows\NAudio.WinForms.dll
 C:\Semester 2\OOP Lab\Game\Game\bin\Debug\net8.0-windows\NAudio.WinMM.dll
+C:\Semester 2\OOP Lab\Game\Game\obj\Debug\net8.0-windows\Game.sourcelink.json

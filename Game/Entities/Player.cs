@@ -1,47 +1,57 @@
 ﻿using Game.Core;
-using Game.Extensions;
 using Game.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Game.Entities
 {
-    internal class Player : GameObject
+    public class Player : GameObject, ICollidable
     {
-        // Movement strategy: demonstrates composition over inheritance.
-        // Different movement behaviors can be injected (KeyboardMovement, PatrolMovement, etc.).
         public IMovement? Movement { get; set; }
 
-        // Domain state
-        public int Health { get; set; } = 100;
+        public int Fuel { get; set; } = 100;
         public int Score { get; set; } = 0;
+        public int MaxFuel { get; private set; } = 100;
 
-        /// Update the player: delegate movement to the Movement strategy (if provided) and then apply base update.
-        /// Shows the Strategy pattern (movement behavior varies independently from Player class).
+        public string Tag { get; set; } = "Player";
+
+        // 5-second no booster counter
+        public int framesWithoutBooster { get; set; } = 0;
+
         public override void Update(GameTime gameTime)
         {
             Movement?.Move(this, gameTime);
             base.Update(gameTime);
         }
 
-        /// Draw uses base implementation; override if player needs custom visuals.
-
         public override void Draw(Graphics g)
         {
             base.Draw(g);
         }
 
-        /// Collision reaction for the player. Demonstrates single responsibility: domain reaction is handled here.
         public override void OnCollision(GameObject other)
         {
-            if (other is Enemy)
-                Health -= 10;
+            if (other is Enemy enemy)
+            {
+                Fuel -= 30;
+                if (Fuel < 0) Fuel = 0;
 
-            if (other is PowerUp)
-                Health += 20;
+                // Important: prevent multiple collisions
+                enemy.IsActive = false;
+            }
+
+            if (other is EnergyBooster booster)
+            {
+                Score += 10;
+                Fuel += 20;
+                if (Fuel > MaxFuel) Fuel = MaxFuel;
+
+                // Reset framesWithoutBooster
+                framesWithoutBooster = 0;
+
+                // Prevent double collection
+                booster.IsActive = false;
+            }
         }
+
     }
 }

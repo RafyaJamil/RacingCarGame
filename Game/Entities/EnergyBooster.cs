@@ -1,23 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Game.Interfaces;
+using System.Drawing;
 
 namespace Game.Entities
 {
-    internal class EnergyBooster : GameObject
+    internal class EnergyBooster : GameObject, ICollidable
     {
+        public string Tag { get; set; } = "Booster";
+
         public EnergyBooster()
         {
             IsActive = true;
         }
+
         public override void OnCollision(GameObject other)
         {
-            // If player touches energy booster → disappear
-            if (other is Player)
+            if (other is Player player)
             {
-                this.IsActive = false;
+                // Remove Score increment here
+                // Fuel boost handled in Player.OnCollision
+                this.IsActive = false; // Booster disappears
             }
         }
     }

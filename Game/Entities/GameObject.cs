@@ -37,6 +37,8 @@ namespace Game.Entities
         // Optional sprite for rendering
         public Image? Sprite { get; set; } = null;
 
+        public string Tag {  get; set; }
+
         // Bounds of the object for collision detection
         // Exposed as a computed property rather than stored state (keeps consistency)
         public RectangleF Bounds => new RectangleF(Position, Size);
