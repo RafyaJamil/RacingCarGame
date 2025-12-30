@@ -1,7 +1,6 @@
 ﻿using Game.Core;
-using Game.Entities;
 using Game.Interfaces;
-using System.Security.Policy;
+using System.Drawing;
 
 namespace Game.Entities
 {
@@ -10,12 +9,12 @@ namespace Game.Entities
         public IMovement? Movement { get; set; }
         public string Tag { get; set; } = "Enemy";
 
-        // Temporary pushback applied during collision
+        // Pushback applied during collision
         public float PushbackY { get; set; } = 0f;
 
         public Enemy()
         {
-            Velocity = new PointF(0, 5); // normal downward speed
+            Velocity = new PointF(0, 5); // Normal downward speed
         }
 
         public override void Update(GameTime gameTime)
@@ -23,13 +22,12 @@ namespace Game.Entities
             // Apply normal velocity + pushback
             Position = new PointF(Position.X, Position.Y + Velocity.Y + PushbackY);
 
-            // Slowly reduce pushback to zero
+            // Smoothly reduce pushback
             PushbackY *= 0.7f;
             if (Math.Abs(PushbackY) < 0.1f) PushbackY = 0f;
 
-            // Clamp Y within road
-            if (Position.Y < 0) Position = new PointF(Position.X, 0);
-            if (Position.Y > 520) Position = new PointF(Position.X, 520);
+            // Clamp Y at bottom of screen only
+            if (Position.Y > 600) IsActive = false; // Enemy naturally leaves screen here
 
             base.Update(gameTime);
         }
@@ -44,8 +42,8 @@ namespace Game.Entities
 
         public override void OnCollision(GameObject other)
         {
-            // Enemy itself does nothing; push handled in Player collision
+            // Enemy reaction handled by Player collision
+            // Do NOT deactivate enemy here
         }
     }
 }
-

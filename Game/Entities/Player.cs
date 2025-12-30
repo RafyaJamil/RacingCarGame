@@ -1,5 +1,6 @@
 ﻿using Game.Core;
 using Game.Interfaces;
+using Game.Movements;
 using System.Drawing;
 
 namespace Game.Entities
@@ -7,30 +8,31 @@ namespace Game.Entities
     public class Player : GameObject, ICollidable
     {
         public IMovement? Movement { get; set; }
+        public JumpingMovement? JumpMovement { get; set; }
 
         public int Fuel { get; set; } = 100;
-        public int Score { get; set; } = 0;
         public int MaxFuel { get; private set; } = 100;
-
+        public int Score { get; set; } = 0;
         public string Tag { get; set; } = "Player";
 
         public int framesWithoutBooster { get; set; } = 0;
-
-        // Temporary pushback
         public float PushbackY { get; set; } = 0f;
+        public string JumpMessage { get; set; } = "";
 
         public override void Update(GameTime gameTime)
         {
+            // Keyboard movement
             Movement?.Move(this, gameTime);
 
-            // Apply velocity + pushback
-            Position = new PointF(Position.X + Velocity.X, Position.Y + Velocity.Y + PushbackY);
+            // Jump movement
+            JumpMovement?.Move(this, gameTime);
 
-            // Slowly reduce pushback to zero
+            // Apply pushback
+            Position = new PointF(Position.X + Velocity.X, Position.Y + Velocity.Y + PushbackY);
             PushbackY *= 0.7f;
             if (Math.Abs(PushbackY) < 0.1f) PushbackY = 0f;
 
-            // Clamp position within road
+            // Clamp vertical position
             if (Position.Y < 0) Position = new PointF(Position.X, 0);
             if (Position.Y > 500) Position = new PointF(Position.X, 500);
 
@@ -44,9 +46,10 @@ namespace Game.Entities
                 Fuel -= 20;
                 if (Fuel < 0) Fuel = 0;
 
-                // Apply smooth pushback
-                this.PushbackY = 5;        // player moves slightly down
-                enemy.PushbackY = -10;     // enemy moves slightly up
+                this.PushbackY = 5;
+                enemy.PushbackY = -10;
+
+                enemy.Velocity = new PointF(enemy.Velocity.X, enemy.Velocity.Y * 0.6f);
             }
 
             if (other is EnergyBooster booster)
@@ -58,6 +61,25 @@ namespace Game.Entities
                 booster.IsActive = false;
             }
         }
-    }
 
+        public void TryJump()
+        {
+            if (Fuel >= MaxFuel)
+            {
+                JumpMovement?.StartJump();
+            }
+            else
+            {
+                JumpMessage = "You can only jump when fuel is full!";
+                var t = new System.Windows.Forms.Timer();
+                t.Interval = 1000;
+                t.Tick += (s, e) =>
+                {
+                    JumpMessage = "";
+                    t.Stop();
+                };
+                t.Start();
+            }
+        }
+    }
 }

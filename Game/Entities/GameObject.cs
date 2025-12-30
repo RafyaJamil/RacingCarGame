@@ -42,6 +42,7 @@ namespace Game.Entities
         // Bounds of the object for collision detection
         // Exposed as a computed property rather than stored state (keeps consistency)
         public RectangleF Bounds => new RectangleF(Position, Size);
+        public float PushbackY { get; set; } = 0f;
 
         // Default update advances position by velocity.
         // Derived classes should call unless they fully replace movement behavior.

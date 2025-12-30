@@ -2,11 +2,10 @@
 using Game.Entities;
 using Game.Interfaces;
 using System.Drawing;
-using EZInput;
 
 namespace Game.Movements
 {
-    internal class JumpingMovement : IMovement
+    public class JumpingMovement : IMovement
     {
         public float JumpStrength { get; set; } = 10f;
         public float Gravity { get; set; } = 0.5f;
@@ -20,20 +19,20 @@ namespace Game.Movements
             this.groundY = groundY;
         }
 
-        public void Move(GameObject obj, GameTime gameTime)
+        public void StartJump()
         {
-            // Jump input
-            if (!isJumping && Keyboard.IsKeyPressed(Key.Space))
+            if (!isJumping)
             {
                 verticalVelocity = -JumpStrength;
                 isJumping = true;
             }
+        }
 
-            // Apply gravity
+        public void Move(GameObject obj, GameTime gameTime)
+        {
             verticalVelocity += Gravity;
             obj.Position = new PointF(obj.Position.X, obj.Position.Y + verticalVelocity);
 
-            // Ground collision
             if (obj.Position.Y >= groundY)
             {
                 obj.Position = new PointF(obj.Position.X, groundY);

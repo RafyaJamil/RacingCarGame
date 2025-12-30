@@ -44,6 +44,8 @@ namespace Game
         const int framesFor5Seconds = 300;
         const int maxScore = 70;
 
+        Button jumpButton;
+
         public RacingCar()
         {
             InitializeComponent();
@@ -73,18 +75,38 @@ namespace Game
             };
 
             SetupGame();
+            SetupJumpButton();
             SetupTimer();
         }
 
         void SetupGame()
         {
-            game.AddObject(new Player
+            var player = new Player
             {
                 Position = new PointF(lanes[1], 420),
                 Size = new Size(100, 100),
-                Sprite = Resources.DriverCar,
-                Movement = new KeyboardMovement()
-            });
+                Sprite = Resources.DriverCar
+            };
+
+            // Assign movements
+            player.Movement = new KeyboardMovement();
+            player.JumpMovement = new JumpingMovement(420);
+
+            game.AddObject(player);
+        }
+
+        void SetupJumpButton()
+        {
+            jumpButton = new Button();
+            jumpButton.Text = "JUMP";
+            jumpButton.Size = new Size(100, 50);
+            jumpButton.Location = new Point(50, ClientSize.Height - 80);
+            jumpButton.Click += (s, e) =>
+            {
+                var player = game.Objects.OfType<Player>().FirstOrDefault();
+                player?.TryJump();
+            };
+            Controls.Add(jumpButton);
         }
 
         void SetupTimer()
@@ -98,36 +120,35 @@ namespace Game
         {
             Graphics g = e.Graphics;
 
-            // LEFT GRASS
             DrawScrollingGrass(g, 0, (int)roadX);
-
-            // ROAD (animated)
             DrawScrollingRoad(g);
-
-            // RIGHT GRASS
-            DrawScrollingGrass(
-                g,
-                (int)(roadX + roadWidth),
-                ClientSize.Width - (int)(roadX + roadWidth)
-            );
+            DrawScrollingGrass(g, (int)(roadX + roadWidth), ClientSize.Width - (int)(roadX + roadWidth));
 
             game.Draw(g);
+
+            // Jump message
+            var player = game.Objects.OfType<Player>().FirstOrDefault();
+            if (player != null && !string.IsNullOrEmpty(player.JumpMessage))
+            {
+                using (Font font = new Font("Arial", 16, FontStyle.Bold))
+                using (Brush brush = new SolidBrush(Color.Yellow))
+                {
+                    g.DrawString(player.JumpMessage, font, brush, 50, 50);
+                }
+            }
+
             DrawHUD(g);
         }
 
         void Timer_Tick(object sender, EventArgs e)
         {
-            // scrolling updates
             grassOffsetY += grassSpeed;
             roadOffsetY += roadSpeed;
 
-            if (grassOffsetY >= grassImage.Height)
-                grassOffsetY = 0;
+            if (grassOffsetY >= grassImage.Height) grassOffsetY = 0;
+            if (roadOffsetY >= roadImage.Height) roadOffsetY = 0;
 
-            if (roadOffsetY >= roadImage.Height)
-                roadOffsetY = 0;
-
-            Player player = game.Objects.OfType<Player>().FirstOrDefault();
+            var player = game.Objects.OfType<Player>().FirstOrDefault();
             if (player != null)
             {
                 player.framesWithoutBooster++;
@@ -139,18 +160,18 @@ namespace Game
                     player.framesWithoutBooster = 0;
                 }
 
-                if (player.Position.X < lanes[0])
-                    player.Position = new PointF(lanes[0], player.Position.Y);
+                // Clamp horizontal position inside lanes
+                if (player.Position.X < lanes[0]) player.Position = new PointF(lanes[0], player.Position.Y);
+                if (player.Position.X > lanes[2]) player.Position = new PointF(lanes[2], player.Position.Y);
 
-                if (player.Position.X > lanes[2])
-                    player.Position = new PointF(lanes[2], player.Position.Y);
-
+                // Level fail
                 if (player.Fuel <= 0)
                 {
                     timer.Stop();
                     MessageBox.Show("LEVEL FAILED!");
                 }
 
+                // Level complete
                 if (player.Score >= maxScore)
                 {
                     timer.Stop();
@@ -173,42 +194,33 @@ namespace Game
             }
 
             game.Update(new GameTime());
-            physics.Apply(game.Objects.ToList());
             collisions.Check(game.Objects.ToList());
-            game.Cleanup();
 
+            // Cleanup boosters
+            foreach (var booster in game.Objects.OfType<EnergyBooster>().ToList())
+            {
+                if (booster.Position.Y > 600) booster.IsActive = false;
+            }
+
+            game.Cleanup();
             Invalidate();
         }
 
         void DrawScrollingGrass(Graphics g, int x, int width)
         {
             int imgH = grassImage.Height;
-
             for (int y = -imgH; y < ClientSize.Height + imgH; y += imgH)
             {
-                g.DrawImage(
-                    grassImage,
-                    x,
-                    y + (int)grassOffsetY,
-                    width,
-                    imgH
-                );
+                g.DrawImage(grassImage, x, y + (int)grassOffsetY, width, imgH);
             }
         }
 
         void DrawScrollingRoad(Graphics g)
         {
             int imgH = roadImage.Height;
-
             for (int y = -imgH; y < ClientSize.Height + imgH; y += imgH)
             {
-                g.DrawImage(
-                    roadImage,
-                    roadX,
-                    y + (int)roadOffsetY,
-                    (int)roadWidth,
-                    imgH
-                );
+                g.DrawImage(roadImage, roadX, y + (int)roadOffsetY, (int)roadWidth, imgH);
             }
         }
 
@@ -244,7 +256,7 @@ namespace Game
             int fuelY = 80;
             Font titleFont = new Font("Arial", 10, FontStyle.Bold);
 
-            Player player = game.Objects.OfType<Player>().FirstOrDefault();
+            var player = game.Objects.OfType<Player>().FirstOrDefault();
             if (player == null) return;
 
             Color labelColor = Color.Black;
@@ -253,7 +265,6 @@ namespace Game
             // Fuel
             g.DrawString("FUEL", titleFont, new SolidBrush(labelColor), hudX, fuelY - 30);
             g.FillRectangle(new SolidBrush(hudBgColor), hudX, fuelY, barWidth, barHeight);
-
             float fuelFill = (player.Fuel / (float)player.MaxFuel) * barHeight;
             Brush fuelBrush = (player.Fuel <= 30) ? Brushes.Red : Brushes.Lime;
             g.FillRectangle(fuelBrush, hudX, fuelY + barHeight - fuelFill, barWidth, fuelFill);
@@ -262,10 +273,8 @@ namespace Game
             int scoreX = (int)(hudX + barWidth + 25);
             g.DrawString("SCORE", titleFont, new SolidBrush(labelColor), scoreX, fuelY - 30);
             g.FillRectangle(new SolidBrush(hudBgColor), scoreX, fuelY, barWidth, barHeight);
-
             int maxBlocks = 7;
             int filledBlocks = Math.Min(player.Score / 10, maxBlocks);
-
             for (int i = 0; i < maxBlocks; i++)
             {
                 Brush block = (i < filledBlocks) ? Brushes.Lime : Brushes.DimGray;
