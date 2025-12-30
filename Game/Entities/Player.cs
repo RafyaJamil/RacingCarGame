@@ -14,29 +14,39 @@ namespace Game.Entities
 
         public string Tag { get; set; } = "Player";
 
-        // 5-second no booster counter
         public int framesWithoutBooster { get; set; } = 0;
+
+        // Temporary pushback
+        public float PushbackY { get; set; } = 0f;
 
         public override void Update(GameTime gameTime)
         {
             Movement?.Move(this, gameTime);
-            base.Update(gameTime);
-        }
 
-        public override void Draw(Graphics g)
-        {
-            base.Draw(g);
+            // Apply velocity + pushback
+            Position = new PointF(Position.X + Velocity.X, Position.Y + Velocity.Y + PushbackY);
+
+            // Slowly reduce pushback to zero
+            PushbackY *= 0.7f;
+            if (Math.Abs(PushbackY) < 0.1f) PushbackY = 0f;
+
+            // Clamp position within road
+            if (Position.Y < 0) Position = new PointF(Position.X, 0);
+            if (Position.Y > 500) Position = new PointF(Position.X, 500);
+
+            base.Update(gameTime);
         }
 
         public override void OnCollision(GameObject other)
         {
             if (other is Enemy enemy)
             {
-                Fuel -= 30;
+                Fuel -= 20;
                 if (Fuel < 0) Fuel = 0;
 
-                // Important: prevent multiple collisions
-                enemy.IsActive = false;
+                // Apply smooth pushback
+                this.PushbackY = 5;        // player moves slightly down
+                enemy.PushbackY = -10;     // enemy moves slightly up
             }
 
             if (other is EnergyBooster booster)
@@ -44,14 +54,10 @@ namespace Game.Entities
                 Score += 10;
                 Fuel += 20;
                 if (Fuel > MaxFuel) Fuel = MaxFuel;
-
-                // Reset framesWithoutBooster
                 framesWithoutBooster = 0;
-
-                // Prevent double collection
                 booster.IsActive = false;
             }
         }
-
     }
+
 }

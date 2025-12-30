@@ -1,43 +1,29 @@
 ﻿using Game.Entities;
 using Game.Interfaces;
-using System;
+using System.Drawing;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Game.Systems
 {
     internal class PhysicsSystem
     {
-        // Global gravity value (can be positive or negative)
         public float Gravity { get; set; } = 0.5f;
 
-        // Apply physics to objects that have physics enabled
         public void Apply(List<GameObject> objects)
         {
-            foreach (var obj in objects.OfType<IPhysicsObject>().Where(o => o.HasPhysics))
+            foreach (var obj in objects.OfType<IMovable>().Where(o => o.HasPhysics))
             {
-                if (obj is IMovable movable)
+                // Apply gravity to vertical velocity
+                obj.Velocity = new PointF(obj.Velocity.X, obj.Velocity.Y + Gravity);
+
+                // Update position
+                if (obj is GameObject go)
                 {
-                    // Use the object custom gravity if set, otherwise use the global gravity
-                    float appliedGravity = obj.CustomGravity ?? Gravity;
-
-                    // Update the velocity of the object by applying gravity.
-                    // Note: This is simple Euler integration and illustrates the physics update responsibility.
-                    movable.Velocity = new PointF(
-                        movable.Velocity.X, // Horizontal velocity remains unchanged
-                        movable.Velocity.Y + appliedGravity // Vertical velocity changes based on gravity
+                    go.Position = new PointF(
+                        go.Position.X + obj.Velocity.X,
+                        go.Position.Y + obj.Velocity.Y
                     );
-
-                    if (obj is GameObject gameObject)
-                    {
-                        // Update the position of the object based on its (now-updated) velocity
-                        gameObject.Position = new PointF(
-                            gameObject.Position.X + movable.Velocity.X,
-                            gameObject.Position.Y + movable.Velocity.Y
-                        );
-                    }
                 }
             }
         }

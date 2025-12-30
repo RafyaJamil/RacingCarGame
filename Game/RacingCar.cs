@@ -18,13 +18,20 @@ namespace Game
         System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
 
         Image roadImage;
-        Image sideImage;
+        Image grassImage;
         Image[] enemyCarImages;
 
-        float laneWidth = 100f;
+        float laneWidth;
         float[] lanes;
         float roadX;
         float roadWidth;
+
+        // scrolling
+        float grassOffsetY = 0f;
+        float roadOffsetY = 0f;
+
+        float grassSpeed = 4f;
+        float roadSpeed = 6f;
 
         Random random = new Random();
 
@@ -43,7 +50,7 @@ namespace Game
             DoubleBuffered = true;
 
             roadImage = Resources.Roadimage;
-            sideImage = Resources.roadsidebuildings;
+            grassImage = Resources.grass;
 
             enemyCarImages = new Image[]
             {
@@ -53,10 +60,10 @@ namespace Game
                 Resources.whiteTruck
             };
 
-            // --- ALIGNMENT FIX START ---
-            roadWidth = roadImage.Width; // original road width
-            roadX = (ClientSize.Width - roadWidth) / 2; // center road
-            laneWidth = roadWidth / 3f; // 3 lanes
+            // --- ROAD & LANES ALIGNMENT ---
+            roadWidth = roadImage.Width;
+            roadX = (ClientSize.Width - roadWidth) / 2f;
+            laneWidth = roadWidth / 3f;
 
             lanes = new float[]
             {
@@ -64,7 +71,6 @@ namespace Game
                 roadX + laneWidth * 1.5f,
                 roadX + laneWidth * 2.5f
             };
-            // --- ALIGNMENT FIX END ---
 
             SetupGame();
             SetupTimer();
@@ -92,8 +98,18 @@ namespace Game
         {
             Graphics g = e.Graphics;
 
-            g.DrawImage(sideImage, 0, 0, (int)roadX, ClientSize.Height);
-            g.DrawImage(roadImage, roadX, 0, (int)roadWidth, ClientSize.Height);
+            // LEFT GRASS
+            DrawScrollingGrass(g, 0, (int)roadX);
+
+            // ROAD (animated)
+            DrawScrollingRoad(g);
+
+            // RIGHT GRASS
+            DrawScrollingGrass(
+                g,
+                (int)(roadX + roadWidth),
+                ClientSize.Width - (int)(roadX + roadWidth)
+            );
 
             game.Draw(g);
             DrawHUD(g);
@@ -101,6 +117,16 @@ namespace Game
 
         void Timer_Tick(object sender, EventArgs e)
         {
+            // scrolling updates
+            grassOffsetY += grassSpeed;
+            roadOffsetY += roadSpeed;
+
+            if (grassOffsetY >= grassImage.Height)
+                grassOffsetY = 0;
+
+            if (roadOffsetY >= roadImage.Height)
+                roadOffsetY = 0;
+
             Player player = game.Objects.OfType<Player>().FirstOrDefault();
             if (player != null)
             {
@@ -115,6 +141,7 @@ namespace Game
 
                 if (player.Position.X < lanes[0])
                     player.Position = new PointF(lanes[0], player.Position.Y);
+
                 if (player.Position.X > lanes[2])
                     player.Position = new PointF(lanes[2], player.Position.Y);
 
@@ -153,6 +180,38 @@ namespace Game
             Invalidate();
         }
 
+        void DrawScrollingGrass(Graphics g, int x, int width)
+        {
+            int imgH = grassImage.Height;
+
+            for (int y = -imgH; y < ClientSize.Height + imgH; y += imgH)
+            {
+                g.DrawImage(
+                    grassImage,
+                    x,
+                    y + (int)grassOffsetY,
+                    width,
+                    imgH
+                );
+            }
+        }
+
+        void DrawScrollingRoad(Graphics g)
+        {
+            int imgH = roadImage.Height;
+
+            for (int y = -imgH; y < ClientSize.Height + imgH; y += imgH)
+            {
+                g.DrawImage(
+                    roadImage,
+                    roadX,
+                    y + (int)roadOffsetY,
+                    (int)roadWidth,
+                    imgH
+                );
+            }
+        }
+
         void SpawnEnemy()
         {
             int lane = random.Next(3);
@@ -179,7 +238,6 @@ namespace Game
 
         void DrawHUD(Graphics g)
         {
-            // original DrawHUD function as you sent
             float hudX = roadX + roadWidth + 30;
             int barWidth = 40;
             int barHeight = 260;
@@ -189,28 +247,29 @@ namespace Game
             Player player = game.Objects.OfType<Player>().FirstOrDefault();
             if (player == null) return;
 
-            Color labelColor = Color.Black; // label color
-            Color hudBgColor = Color.FromArgb(180, 100, 50); // brown-orange
+            Color labelColor = Color.Black;
+            Color hudBgColor = Color.FromArgb(180, 100, 50);
 
             // Fuel
             g.DrawString("FUEL", titleFont, new SolidBrush(labelColor), hudX, fuelY - 30);
             g.FillRectangle(new SolidBrush(hudBgColor), hudX, fuelY, barWidth, barHeight);
+
             float fuelFill = (player.Fuel / (float)player.MaxFuel) * barHeight;
             Brush fuelBrush = (player.Fuel <= 30) ? Brushes.Red : Brushes.Lime;
             g.FillRectangle(fuelBrush, hudX, fuelY + barHeight - fuelFill, barWidth, fuelFill);
 
             // Score
             int scoreX = (int)(hudX + barWidth + 25);
-            int scoreY = fuelY;
-            g.DrawString("SCORE", titleFont, new SolidBrush(labelColor), scoreX, scoreY - 30);
-            g.FillRectangle(new SolidBrush(hudBgColor), scoreX, scoreY, barWidth, barHeight);
+            g.DrawString("SCORE", titleFont, new SolidBrush(labelColor), scoreX, fuelY - 30);
+            g.FillRectangle(new SolidBrush(hudBgColor), scoreX, fuelY, barWidth, barHeight);
 
             int maxBlocks = 7;
             int filledBlocks = Math.Min(player.Score / 10, maxBlocks);
+
             for (int i = 0; i < maxBlocks; i++)
             {
                 Brush block = (i < filledBlocks) ? Brushes.Lime : Brushes.DimGray;
-                g.FillRectangle(block, scoreX, scoreY + (maxBlocks - 1 - i) * 32, barWidth, 26);
+                g.FillRectangle(block, scoreX, fuelY + (maxBlocks - 1 - i) * 32, barWidth, 26);
             }
         }
     }

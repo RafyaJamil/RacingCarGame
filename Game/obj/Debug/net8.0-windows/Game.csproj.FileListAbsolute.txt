@@ -26,3 +26,7 @@ C:\Semester 2\OOP Lab\Game\Game\bin\Debug\net8.0-windows\NAudio.Wasapi.dll
 C:\Semester 2\OOP Lab\Game\Game\bin\Debug\net8.0-windows\NAudio.WinForms.dll
 C:\Semester 2\OOP Lab\Game\Game\bin\Debug\net8.0-windows\NAudio.WinMM.dll
 C:\Semester 2\OOP Lab\Game\Game\obj\Debug\net8.0-windows\Game.sourcelink.json
+C:\Semester 2\OOP Lab\Game\Game\obj\Debug\net8.0-windows\Game.InstructionsForm.resources
+C:\Semester 2\OOP Lab\Game\Game\obj\Debug\net8.0-windows\Game.MainForm.resources
+C:\Semester 2\OOP Lab\Game\Game\obj\Debug\net8.0-windows\Game.PlayerInfoForm.resources
+C:\Semester 2\OOP Lab\Game\Game\obj\Debug\net8.0-windows\Game.SelectForm.resources
