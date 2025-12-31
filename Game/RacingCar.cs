@@ -87,10 +87,14 @@ namespace Game
                 Sprite = Resources.DriverCar
             };
 
-            // Keyboard movement (Left/Right/Up/Down)
+            // Keyboard movement (Left/Right/Down)
             player.Movement = new KeyboardMovement();
-            // Jump only via button
+
+            // Jump only via Jump button
             player.JumpMovement = new JumpingMovement(420);
+
+            // Animator for jump animation
+          
 
             game.AddObject(player);
         }
@@ -120,12 +124,19 @@ namespace Game
         {
             Graphics g = e.Graphics;
 
+            // Draw scrolling background
             DrawScrollingGrass(g, 0, (int)roadX);
             DrawScrollingRoad(g, (int)roadX, (int)roadWidth);
             DrawScrollingGrass(g, (int)(roadX + roadWidth), ClientSize.Width - (int)(roadX + roadWidth));
 
-            game.Draw(g);
+            // Draw all game objects
+            foreach (var obj in game.Objects)
+            {
+                if (obj.Sprite != null)
+                    g.DrawImage(obj.Sprite, obj.Position.X - obj.Size.Width / 2, obj.Position.Y - obj.Size.Height / 2, obj.Size.Width, obj.Size.Height);
+            }
 
+            // Jump message
             var player = game.Objects.OfType<Player>().FirstOrDefault();
             if (player != null && !string.IsNullOrEmpty(player.JumpMessage))
             {
@@ -189,10 +200,10 @@ namespace Game
                 boosterCounter = 0;
             }
 
-            // Update all objects
             game.Update(new GameTime());
-            collisions.Check(game.Objects.ToList()); // Collisions skip player if jumping
+            collisions.Check(game.Objects.ToList());
 
+            // Cleanup boosters
             foreach (var booster in game.Objects.OfType<EnergyBooster>().ToList())
             {
                 if (booster.Position.Y > 600) booster.IsActive = false;

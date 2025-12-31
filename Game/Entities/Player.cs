@@ -17,11 +17,53 @@ namespace Game.Entities
         public int Score { get; set; } = 0;
         public string Tag { get; set; } = "Player";
 
+        private Image? originalSprite;
+
+
         public int framesWithoutBooster { get; set; } = 0;
         public float PushbackY { get; set; } = 0f;
         public string JumpMessage { get; set; } = "";
 
         public bool IsJumping => JumpMovement != null && JumpMovement.IsJumping;
+
+        private const int JumpFrameDelay = 6; // smaller = faster animation
+
+
+        private Image[] jumpFrames =
+{
+           Properties.Resources.lifting_removebg_preview,
+           Properties.Resources.inair_removebg_preview,
+           Properties.Resources.lifting_removebg_preview
+};
+
+        private int jumpFrameIndex = 0;
+        private int jumpFrameCounter = 0;
+
+        private void UpdateJumpAnimation()
+        {
+            jumpFrameCounter++;
+
+            if (jumpFrameCounter >= 6) // speed control
+            {
+                jumpFrameIndex++;
+                jumpFrameCounter = 0;
+
+                if (jumpFrameIndex >= jumpFrames.Length)
+                    jumpFrameIndex = jumpFrames.Length - 1;
+
+                Sprite = jumpFrames[jumpFrameIndex];
+            }
+        }
+
+        private void RestoreOriginalSprite()
+        {
+            if (originalSprite != null)
+            {
+                Sprite = originalSprite;
+                jumpFrameIndex = 0;
+                jumpFrameCounter = 0;
+            }
+        }
 
         public override void Update(GameTime gameTime)
         {
@@ -30,6 +72,14 @@ namespace Game.Entities
 
             // Jump only via button
             JumpMovement?.Move(this, gameTime);
+            if (IsJumping)
+            {
+                UpdateJumpAnimation();   // jump frames change
+            }
+            else
+            {
+                RestoreOriginalSprite(); // land hone ke baad wapas original image
+            }
 
             // Pushback
             Position = new PointF(Position.X + Velocity.X, Position.Y + Velocity.Y + PushbackY);
@@ -75,7 +125,11 @@ namespace Game.Entities
         {
             if (Fuel >= MaxFuel)
             {
+                originalSprite ??= Sprite;
                 JumpMovement?.StartJump();
+                JumpMessage = "JUMP!";
+                jumpFrameIndex = 0;
+                jumpFrameCounter = 0;
             }
             else
             {
@@ -90,5 +144,9 @@ namespace Game.Entities
                 t.Start();
             }
         }
+
+       
+
+
     }
 }
