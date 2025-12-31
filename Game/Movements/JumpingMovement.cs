@@ -7,12 +7,12 @@ namespace Game.Movements
 {
     public class JumpingMovement : IMovement
     {
-        public float JumpStrength { get; set; } = 10f;
+        public float JumpStrength { get; set; } = 15f;
         public float Gravity { get; set; } = 0.5f;
 
         private float verticalVelocity = 0f;
         private float groundY;
-        private bool isJumping = false;
+        public bool IsJumping { get; private set; } = false;
 
         public JumpingMovement(float groundY)
         {
@@ -21,15 +21,17 @@ namespace Game.Movements
 
         public void StartJump()
         {
-            if (!isJumping)
+            if (!IsJumping)
             {
                 verticalVelocity = -JumpStrength;
-                isJumping = true;
+                IsJumping = true;
             }
         }
 
         public void Move(GameObject obj, GameTime gameTime)
         {
+            if (!IsJumping) return;
+
             verticalVelocity += Gravity;
             obj.Position = new PointF(obj.Position.X, obj.Position.Y + verticalVelocity);
 
@@ -37,7 +39,7 @@ namespace Game.Movements
             {
                 obj.Position = new PointF(obj.Position.X, groundY);
                 verticalVelocity = 0f;
-                isJumping = false;
+                IsJumping = false;
             }
         }
     }

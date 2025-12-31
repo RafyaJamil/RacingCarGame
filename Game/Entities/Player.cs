@@ -1,7 +1,9 @@
 ﻿using Game.Core;
+using Game.Entities;
 using Game.Interfaces;
 using Game.Movements;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace Game.Entities
 {
@@ -19,20 +21,22 @@ namespace Game.Entities
         public float PushbackY { get; set; } = 0f;
         public string JumpMessage { get; set; } = "";
 
+        public bool IsJumping => JumpMovement != null && JumpMovement.IsJumping;
+
         public override void Update(GameTime gameTime)
         {
-            // Keyboard movement
+            // Keyboard move
             Movement?.Move(this, gameTime);
 
-            // Jump movement
+            // Jump only via button
             JumpMovement?.Move(this, gameTime);
 
-            // Apply pushback
+            // Pushback
             Position = new PointF(Position.X + Velocity.X, Position.Y + Velocity.Y + PushbackY);
             PushbackY *= 0.7f;
-            if (Math.Abs(PushbackY) < 0.1f) PushbackY = 0f;
+            if (System.Math.Abs(PushbackY) < 0.1f) PushbackY = 0f;
 
-            // Clamp vertical position
+            // Clamp vertical
             if (Position.Y < 0) Position = new PointF(Position.X, 0);
             if (Position.Y > 500) Position = new PointF(Position.X, 500);
 
@@ -41,6 +45,9 @@ namespace Game.Entities
 
         public override void OnCollision(GameObject other)
         {
+            // Ignore collisions while jumping
+            if (IsJumping) return;
+
             if (other is Enemy enemy)
             {
                 Fuel -= 20;
@@ -57,11 +64,13 @@ namespace Game.Entities
                 Score += 10;
                 Fuel += 20;
                 if (Fuel > MaxFuel) Fuel = MaxFuel;
+
                 framesWithoutBooster = 0;
                 booster.IsActive = false;
             }
         }
 
+        // Jump only via button
         public void TryJump()
         {
             if (Fuel >= MaxFuel)

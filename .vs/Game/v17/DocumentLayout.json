@@ -1,12 +1,116 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Semester 2\\OOP Lab\\Game\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\racingcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\racingcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\systems\\collisionsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\systems\\collisionsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\movements\\keyboardmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\movements\\keyboardmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\movements\\jumpingmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\movements\\jumpingmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|C:\\Semester 2\\OOP Lab\\Game\\game\\racingcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\racingcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CollisionSystem.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Systems\\CollisionSystem.cs",
+              "RelativeDocumentMoniker": "Game\\Systems\\CollisionSystem.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Systems\\CollisionSystem.cs",
+              "RelativeToolTip": "Game\\Systems\\CollisionSystem.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-31T05:19:24.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RacingCar.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\RacingCar.cs",
+              "RelativeDocumentMoniker": "Game\\RacingCar.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\RacingCar.cs",
+              "RelativeToolTip": "Game\\RacingCar.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-31T04:06:40.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "KeyboardMovement.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\KeyboardMovement.cs",
+              "RelativeDocumentMoniker": "Game\\Movements\\KeyboardMovement.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\KeyboardMovement.cs",
+              "RelativeToolTip": "Game\\Movements\\KeyboardMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-31T04:07:59.335Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Entities\\Player.cs",
+              "RelativeDocumentMoniker": "Game\\Entities\\Player.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Entities\\Player.cs",
+              "RelativeToolTip": "Game\\Entities\\Player.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-31T04:08:08.876Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "JumpingMovement.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\JumpingMovement.cs",
+              "RelativeDocumentMoniker": "Game\\Movements\\JumpingMovement.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\JumpingMovement.cs",
+              "RelativeToolTip": "Game\\Movements\\JumpingMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-31T04:07:48.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RacingCar.cs [Design]",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\RacingCar.cs",
+              "RelativeDocumentMoniker": "Game\\RacingCar.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\RacingCar.cs [Design]",
+              "RelativeToolTip": "Game\\RacingCar.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-31T04:05:14.322Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

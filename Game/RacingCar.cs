@@ -62,11 +62,10 @@ namespace Game
                 Resources.whiteTruck
             };
 
-            // --- ROAD & LANES ALIGNMENT ---
+            // ROAD & LANES
             roadWidth = roadImage.Width;
             roadX = (ClientSize.Width - roadWidth) / 2f;
             laneWidth = roadWidth / 3f;
-
             lanes = new float[]
             {
                 roadX + laneWidth * 0.5f,
@@ -88,8 +87,9 @@ namespace Game
                 Sprite = Resources.DriverCar
             };
 
-            // Assign movements
+            // Keyboard movement (Left/Right/Up/Down)
             player.Movement = new KeyboardMovement();
+            // Jump only via button
             player.JumpMovement = new JumpingMovement(420);
 
             game.AddObject(player);
@@ -104,7 +104,7 @@ namespace Game
             jumpButton.Click += (s, e) =>
             {
                 var player = game.Objects.OfType<Player>().FirstOrDefault();
-                player?.TryJump();
+                player?.TryJump(); // Jump only via button
             };
             Controls.Add(jumpButton);
         }
@@ -121,12 +121,11 @@ namespace Game
             Graphics g = e.Graphics;
 
             DrawScrollingGrass(g, 0, (int)roadX);
-            DrawScrollingRoad(g);
+            DrawScrollingRoad(g, (int)roadX, (int)roadWidth);
             DrawScrollingGrass(g, (int)(roadX + roadWidth), ClientSize.Width - (int)(roadX + roadWidth));
 
             game.Draw(g);
 
-            // Jump message
             var player = game.Objects.OfType<Player>().FirstOrDefault();
             if (player != null && !string.IsNullOrEmpty(player.JumpMessage))
             {
@@ -160,18 +159,15 @@ namespace Game
                     player.framesWithoutBooster = 0;
                 }
 
-                // Clamp horizontal position inside lanes
                 if (player.Position.X < lanes[0]) player.Position = new PointF(lanes[0], player.Position.Y);
                 if (player.Position.X > lanes[2]) player.Position = new PointF(lanes[2], player.Position.Y);
 
-                // Level fail
                 if (player.Fuel <= 0)
                 {
                     timer.Stop();
                     MessageBox.Show("LEVEL FAILED!");
                 }
 
-                // Level complete
                 if (player.Score >= maxScore)
                 {
                     timer.Stop();
@@ -193,10 +189,10 @@ namespace Game
                 boosterCounter = 0;
             }
 
+            // Update all objects
             game.Update(new GameTime());
-            collisions.Check(game.Objects.ToList());
+            collisions.Check(game.Objects.ToList()); // Collisions skip player if jumping
 
-            // Cleanup boosters
             foreach (var booster in game.Objects.OfType<EnergyBooster>().ToList())
             {
                 if (booster.Position.Y > 600) booster.IsActive = false;
@@ -215,12 +211,12 @@ namespace Game
             }
         }
 
-        void DrawScrollingRoad(Graphics g)
+        void DrawScrollingRoad(Graphics g, int x, int width)
         {
             int imgH = roadImage.Height;
             for (int y = -imgH; y < ClientSize.Height + imgH; y += imgH)
             {
-                g.DrawImage(roadImage, roadX, y + (int)roadOffsetY, (int)roadWidth, imgH);
+                g.DrawImage(roadImage, x, y + (int)roadOffsetY, width, imgH);
             }
         }
 
@@ -262,14 +258,12 @@ namespace Game
             Color labelColor = Color.Black;
             Color hudBgColor = Color.FromArgb(180, 100, 50);
 
-            // Fuel
             g.DrawString("FUEL", titleFont, new SolidBrush(labelColor), hudX, fuelY - 30);
             g.FillRectangle(new SolidBrush(hudBgColor), hudX, fuelY, barWidth, barHeight);
             float fuelFill = (player.Fuel / (float)player.MaxFuel) * barHeight;
             Brush fuelBrush = (player.Fuel <= 30) ? Brushes.Red : Brushes.Lime;
             g.FillRectangle(fuelBrush, hudX, fuelY + barHeight - fuelFill, barWidth, fuelFill);
 
-            // Score
             int scoreX = (int)(hudX + barWidth + 25);
             g.DrawString("SCORE", titleFont, new SolidBrush(labelColor), scoreX, fuelY - 30);
             g.FillRectangle(new SolidBrush(hudBgColor), scoreX, fuelY, barWidth, barHeight);

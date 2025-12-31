@@ -12,12 +12,14 @@ namespace Game.Movements
 
         public void Move(GameObject obj, GameTime gameTime)
         {
+            // Left/Right movement
             if (Keyboard.IsKeyPressed(Key.LeftArrow))
                 obj.Position = new PointF(obj.Position.X - Speed, obj.Position.Y);
 
             if (Keyboard.IsKeyPressed(Key.RightArrow))
                 obj.Position = new PointF(obj.Position.X + Speed, obj.Position.Y);
 
+            // Forward/Backward (UP/DOWN) without jumping
             if (Keyboard.IsKeyPressed(Key.UpArrow))
                 obj.Position = new PointF(obj.Position.X, obj.Position.Y - Speed);
 
