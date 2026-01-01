@@ -26,7 +26,6 @@ namespace Game
         float roadX;
         float roadWidth;
 
-        // scrolling
         float grassOffsetY = 0f;
         float roadOffsetY = 0f;
 
@@ -45,6 +44,14 @@ namespace Game
         const int maxScore = 70;
 
         Button jumpButton;
+        bool isPaused = false;
+        bool isGameOver = false;
+        bool isGameWin = false;
+
+        Button pauseButton;
+        Button restartButton;
+        Button endGameButton;
+        Button nextLevelButton;
 
         public RacingCar()
         {
@@ -62,7 +69,6 @@ namespace Game
                 Resources.whiteTruck
             };
 
-            // ROAD & LANES
             roadWidth = roadImage.Width;
             roadX = (ClientSize.Width - roadWidth) / 2f;
             laneWidth = roadWidth / 3f;
@@ -75,6 +81,10 @@ namespace Game
 
             SetupGame();
             SetupJumpButton();
+            SetupPauseButton();
+            SetupRestartButton();
+            SetupEndGameButton();
+            SetupNextLevelButton();
             SetupTimer();
         }
 
@@ -87,14 +97,8 @@ namespace Game
                 Sprite = Resources.DriverCar
             };
 
-            // Keyboard movement (Left/Right/Down)
             player.Movement = new KeyboardMovement();
-
-            // Jump only via Jump button
             player.JumpMovement = new JumpingMovement(420);
-
-            // Animator for jump animation
-          
 
             game.AddObject(player);
         }
@@ -103,20 +107,117 @@ namespace Game
         {
             jumpButton = new Button();
             jumpButton.Text = "JUMP";
-            jumpButton.Size = new Size(100, 50);
-            jumpButton.Location = new Point(50, ClientSize.Height - 80);
+            jumpButton.Size = new Size(120, 55);
+            jumpButton.Location = new Point(ClientSize.Width - jumpButton.Width - 30,
+                                            ClientSize.Height - jumpButton.Height - 40);
+            jumpButton.BackColor = Color.Orange;
+            jumpButton.ForeColor = Color.White;
+            jumpButton.FlatStyle = FlatStyle.Flat;
+            jumpButton.Font = new Font("Arial", 12, FontStyle.Bold);
+            jumpButton.FlatAppearance.BorderSize = 0;
             jumpButton.Click += (s, e) =>
             {
                 var player = game.Objects.OfType<Player>().FirstOrDefault();
-                player?.TryJump(); // Jump only via button
+                player?.TryJump();
             };
             Controls.Add(jumpButton);
         }
 
+        void SetupPauseButton()
+        {
+            pauseButton = new Button();
+            pauseButton.Text = "PAUSE";
+            pauseButton.Size = new Size(120, 45);
+            pauseButton.Location = new Point(30, 30);
+            pauseButton.BackColor = Color.DarkSlateBlue;
+            pauseButton.ForeColor = Color.White;
+            pauseButton.FlatStyle = FlatStyle.Flat;
+            pauseButton.Font = new Font("Arial", 10, FontStyle.Bold);
+            pauseButton.FlatAppearance.BorderSize = 0;
+            pauseButton.Click += (s, e) => TogglePause();
+            Controls.Add(pauseButton);
+        }
+
+        void SetupRestartButton()
+        {
+            restartButton = new Button();
+            restartButton.Text = "RESTART";
+            restartButton.Size = new Size(110, 45);
+            restartButton.BackColor = Color.DarkOrange;
+            restartButton.ForeColor = Color.White;
+            restartButton.FlatStyle = FlatStyle.Flat;
+            restartButton.Location = new Point(30, 90);
+            restartButton.Visible = false;
+            restartButton.Click += (s, e) => RestartGame();
+            Controls.Add(restartButton);
+        }
+
+        void SetupEndGameButton()
+        {
+            endGameButton = new Button();
+            endGameButton.Text = "END GAME";
+            endGameButton.Size = new Size(120, 45);
+            endGameButton.BackColor = Color.Red;
+            endGameButton.ForeColor = Color.White;
+            endGameButton.FlatStyle = FlatStyle.Flat;
+            endGameButton.Location = new Point(30, 150);
+            endGameButton.Visible = false;
+            endGameButton.Click += (s, e) => Application.Exit();
+            Controls.Add(endGameButton);
+        }
+
+        void SetupNextLevelButton()
+        {
+            nextLevelButton = new Button();
+            nextLevelButton.Text = "NEXT LEVEL";
+            nextLevelButton.Size = new Size(120, 45);
+            nextLevelButton.BackColor = Color.Green;
+            nextLevelButton.ForeColor = Color.White;
+            nextLevelButton.FlatStyle = FlatStyle.Flat;
+            nextLevelButton.Location = new Point(30, 210);
+            nextLevelButton.Visible = false;
+            nextLevelButton.Click += (s, e) => RestartGame(); // next level logic
+            Controls.Add(nextLevelButton);
+        }
+
         void SetupTimer()
         {
-            timer.Interval = 16; // ~60 FPS
+            timer.Interval = 16;
             timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+
+        void TogglePause()
+        {
+            if (!isPaused)
+            {
+                timer.Stop();
+                isPaused = true;
+                pauseButton.Text = "RESUME";
+            }
+            else
+            {
+                timer.Start();
+                isPaused = false;
+                pauseButton.Text = "PAUSE";
+            }
+        }
+
+        void RestartGame()
+        {
+            timer.Stop();
+
+            game.Objects.Clear();
+            enemyCounter = 0;
+            boosterCounter = 0;
+            grassOffsetY = 0;
+            roadOffsetY = 0;
+
+            isGameOver = false;
+            isGameWin = false;
+
+            SetupGame();
+
             timer.Start();
         }
 
@@ -124,19 +225,18 @@ namespace Game
         {
             Graphics g = e.Graphics;
 
-            // Draw scrolling background
             DrawScrollingGrass(g, 0, (int)roadX);
             DrawScrollingRoad(g, (int)roadX, (int)roadWidth);
             DrawScrollingGrass(g, (int)(roadX + roadWidth), ClientSize.Width - (int)(roadX + roadWidth));
 
-            // Draw all game objects
             foreach (var obj in game.Objects)
             {
                 if (obj.Sprite != null)
-                    g.DrawImage(obj.Sprite, obj.Position.X - obj.Size.Width / 2, obj.Position.Y - obj.Size.Height / 2, obj.Size.Width, obj.Size.Height);
+                    g.DrawImage(obj.Sprite, obj.Position.X - obj.Size.Width / 2,
+                                       obj.Position.Y - obj.Size.Height / 2,
+                                       obj.Size.Width, obj.Size.Height);
             }
 
-            // Jump message
             var player = game.Objects.OfType<Player>().FirstOrDefault();
             if (player != null && !string.IsNullOrEmpty(player.JumpMessage))
             {
@@ -147,8 +247,37 @@ namespace Game
                 }
             }
 
+            if (isGameOver)
+                DrawEndScreen(g, "YOU FAILED");
+
+            if (isGameWin)
+                DrawEndScreen(g, "YOU WIN!");
+
             DrawHUD(g);
         }
+
+        void DrawEndScreen(Graphics g, string message)
+        {
+            try
+            {
+                using (Brush bg = new SolidBrush(Color.FromArgb(180, 0, 0, 0)))
+                using (Font font = new Font("Arial", 36, FontStyle.Bold))
+                using (Brush textBrush = Brushes.White)
+                {
+                    g.FillRectangle(bg, 0, 0, ClientSize.Width, ClientSize.Height);
+                    SizeF textSize = g.MeasureString(message, font);
+                    float x = Math.Max(0, (ClientSize.Width - textSize.Width) / 2);
+                    float y = Math.Max(0, (ClientSize.Height - textSize.Height) / 2 - 40);
+                    g.DrawString(message, font, textBrush, x, y);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it gracefully
+                Console.WriteLine("Error drawing end screen: " + ex.Message);
+            }
+        }
+
 
         void Timer_Tick(object sender, EventArgs e)
         {
@@ -162,7 +291,6 @@ namespace Game
             if (player != null)
             {
                 player.framesWithoutBooster++;
-
                 if (player.framesWithoutBooster >= framesFor5Seconds)
                 {
                     player.Fuel -= 10;
@@ -175,14 +303,14 @@ namespace Game
 
                 if (player.Fuel <= 0)
                 {
+                    isGameOver = true;
                     timer.Stop();
-                    MessageBox.Show("LEVEL FAILED!");
                 }
 
                 if (player.Score >= maxScore)
                 {
+                    isGameWin = true;
                     timer.Stop();
-                    MessageBox.Show("LEVEL COMPLETE!");
                 }
             }
 
@@ -203,11 +331,15 @@ namespace Game
             game.Update(new GameTime());
             collisions.Check(game.Objects.ToList());
 
-            // Cleanup boosters
             foreach (var booster in game.Objects.OfType<EnergyBooster>().ToList())
             {
                 if (booster.Position.Y > 600) booster.IsActive = false;
             }
+
+            // Buttons visibility
+            if (restartButton != null) restartButton.Visible = isGameOver || isGameWin;
+            if (endGameButton != null) endGameButton.Visible = isGameOver || isGameWin;
+            if (nextLevelButton != null) nextLevelButton.Visible = isGameWin;
 
             game.Cleanup();
             Invalidate();
@@ -217,18 +349,14 @@ namespace Game
         {
             int imgH = grassImage.Height;
             for (int y = -imgH; y < ClientSize.Height + imgH; y += imgH)
-            {
                 g.DrawImage(grassImage, x, y + (int)grassOffsetY, width, imgH);
-            }
         }
 
         void DrawScrollingRoad(Graphics g, int x, int width)
         {
             int imgH = roadImage.Height;
             for (int y = -imgH; y < ClientSize.Height + imgH; y += imgH)
-            {
                 g.DrawImage(roadImage, x, y + (int)roadOffsetY, width, imgH);
-            }
         }
 
         void SpawnEnemy()
