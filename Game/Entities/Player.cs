@@ -1,4 +1,5 @@
 ﻿using Game.Core;
+using Game.Component;
 using Game.Entities;
 using Game.Interfaces;
 using Game.Movements;
@@ -18,6 +19,7 @@ namespace Game.Entities
         public string Tag { get; set; } = "Player";
 
         private Image? originalSprite;
+        public static Audio? AudioSystem;
 
 
         public int framesWithoutBooster { get; set; } = 0;
@@ -107,6 +109,15 @@ namespace Game.Entities
                 enemy.PushbackY = -10;
 
                 enemy.Velocity = new PointF(enemy.Velocity.X, enemy.Velocity.Y * 0.6f);
+
+                AudioSystem?.PlaySound("collision");
+
+                // 🔊 level fail sound (jab fuel zero ho)
+                if (Fuel <= 0)
+                {
+                    AudioSystem?.Stop("bgm");
+                    AudioSystem?.PlaySound("crash");
+                }
             }
 
             if (other is EnergyBooster booster)
@@ -117,6 +128,8 @@ namespace Game.Entities
 
                 framesWithoutBooster = 0;
                 booster.IsActive = false;
+
+                AudioSystem?.PlaySound("energyEater");
             }
         }
 

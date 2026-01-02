@@ -11,7 +11,7 @@ using Game.Core;
 
 namespace Game.Component
 {
-    internal class Audio : IAudio
+    public class Audio : IAudio
     {
         //sound data
         private Dictionary<string, AudioTrack> sounds = new Dictionary<string, AudioTrack>();
@@ -29,43 +29,47 @@ namespace Game.Component
         }
         public void PlaySound(string name)
         {
-            if (!sounds.ContainsKey(name))
-                return;
-
-            // stop if already playing
-            //if (outputs.ContainsKey(name))
-            //{
-            //    Stop(name);
-            //}
-
-            AudioTrack sound = sounds[name];
-
-            string fullPath = System.IO.Path.Combine(
-                AppDomain.CurrentDomain.BaseDirectory,
-                sound.FilePath
-            );
-            if (!File.Exists(fullPath))
-                throw new FileNotFoundException(fullPath);
-            AudioFileReader reader = new AudioFileReader(fullPath);
-            reader.Volume = sound.Volume;
-
-            WaveOutEvent output = new WaveOutEvent();
-            output.Init(reader);
-
-            if (sound.Loop)
+            try
             {
-                output.PlaybackStopped += (s, e) =>
+                if (!sounds.ContainsKey(name))
+                    return;
+
+                AudioTrack sound = sounds[name];
+
+                string fullPath = Path.Combine(
+                    AppDomain.CurrentDomain.BaseDirectory,
+                    sound.FilePath
+                );
+
+                if (!File.Exists(fullPath))
+                    return; // silently ignore
+
+                AudioFileReader reader = new AudioFileReader(fullPath);
+                reader.Volume = sound.Volume;
+
+                WaveOutEvent output = new WaveOutEvent();
+                output.Init(reader);
+
+                if (sound.Loop)
                 {
-                    reader.Position = 0;
-                    output.Play();
-                };
+                    output.PlaybackStopped += (s, e) =>
+                    {
+                        reader.Position = 0;
+                        output.Play();
+                    };
+                }
+
+                readers[name] = reader;
+                outputs[name] = output;
+
+                output.Play();
             }
-
-            readers[name] = reader;
-            outputs[name] = output;
-
-            output.Play();
+            catch
+            {
+                // Game should NEVER crash because of audio
+            }
         }
+
         public void Stop(string name)
         {
             if (!outputs.ContainsKey(name))

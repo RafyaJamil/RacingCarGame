@@ -3,10 +3,12 @@ using Game.Entities;
 using Game.Movements;
 using Game.Properties;
 using Game.Systems;
+using Game.Component;
 using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Game
 {
@@ -16,6 +18,7 @@ namespace Game
         PhysicsSystem physics = new PhysicsSystem();
         CollisionSystem collisions = new CollisionSystem();
         System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+        Audio audio = new Audio();
 
         Image roadImage;
         Image grassImage;
@@ -58,6 +61,9 @@ namespace Game
             InitializeComponent();
             DoubleBuffered = true;
 
+            SetupAudio();
+            Player.AudioSystem = audio;// 👈 سب سے پہلے
+
             roadImage = Resources.Roadimage;
             grassImage = Resources.grass;
 
@@ -86,7 +92,25 @@ namespace Game
             SetupEndGameButton();
             SetupNextLevelButton();
             SetupTimer();
+            this.Shown += RacingCar_Shown;
         }
+
+        private void RacingCar_Shown(object? sender, EventArgs e)
+        {
+            audio.PlaySound("bgm");
+        }
+
+
+        void SetupAudio()
+        {
+            audio.AddSound(new AudioTrack("bgm","Sounds/bgmusic.wav", true));
+            audio.AddSound(new AudioTrack("jump", "Sounds/jump.wav", false));
+            audio.AddSound(new AudioTrack("crash", "Sounds/crash.wav", false));
+            audio.AddSound(new AudioTrack("win", "Sounds/win.wav", false));
+            audio.AddSound(new AudioTrack("energyEater", "Sounds/energyEater.wav", false));
+            audio.AddSound(new AudioTrack("collision", "Sounds/collision.wav", false));
+        }
+
 
         void SetupGame()
         {
@@ -119,6 +143,7 @@ namespace Game
             {
                 var player = game.Objects.OfType<Player>().FirstOrDefault();
                 player?.TryJump();
+                audio.PlaySound("jump");
             };
             Controls.Add(jumpButton);
         }
@@ -192,12 +217,14 @@ namespace Game
             if (!isPaused)
             {
                 timer.Stop();
+                audio.Stop("bgm");
                 isPaused = true;
                 pauseButton.Text = "RESUME";
             }
             else
             {
                 timer.Start();
+                audio.PlaySound("bgm");
                 isPaused = false;
                 pauseButton.Text = "PAUSE";
             }
@@ -215,6 +242,8 @@ namespace Game
 
             isGameOver = false;
             isGameWin = false;
+            audio.StopAll();
+            audio.PlaySound("bgm");
 
             SetupGame();
 
@@ -304,12 +333,17 @@ namespace Game
                 if (player.Fuel <= 0)
                 {
                     isGameOver = true;
+                    isPaused = true;
+                    audio.Stop("bgm");
                     timer.Stop();
                 }
 
                 if (player.Score >= maxScore)
                 {
                     isGameWin = true;
+                    isPaused = true;
+                    audio.Stop("bgm");
+                    audio.PlaySound("win");
                     timer.Stop();
                 }
             }

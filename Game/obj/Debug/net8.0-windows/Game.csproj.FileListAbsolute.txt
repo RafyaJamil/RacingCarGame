@@ -30,3 +30,9 @@ C:\Semester 2\OOP Lab\Game\Game\obj\Debug\net8.0-windows\Game.InstructionsForm.r
 C:\Semester 2\OOP Lab\Game\Game\obj\Debug\net8.0-windows\Game.MainForm.resources
 C:\Semester 2\OOP Lab\Game\Game\obj\Debug\net8.0-windows\Game.PlayerInfoForm.resources
 C:\Semester 2\OOP Lab\Game\Game\obj\Debug\net8.0-windows\Game.SelectForm.resources
+C:\Semester 2\OOP Lab\Game\Game\bin\Debug\net8.0-windows\Sounds\jump.wav
+C:\Semester 2\OOP Lab\Game\Game\bin\Debug\net8.0-windows\Sounds\win.wav
+C:\Semester 2\OOP Lab\Game\Game\bin\Debug\net8.0-windows\Sounds\energyEater.wav
+C:\Semester 2\OOP Lab\Game\Game\bin\Debug\net8.0-windows\Sounds\bgmusic.wav
+C:\Semester 2\OOP Lab\Game\Game\bin\Debug\net8.0-windows\Sounds\collision.wav
+C:\Semester 2\OOP Lab\Game\Game\bin\Debug\net8.0-windows\Sounds\crash.wav
