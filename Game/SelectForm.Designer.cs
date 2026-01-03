@@ -73,6 +73,7 @@
             button2.TabIndex = 2;
             button2.Text = "Level 2";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -114,7 +115,9 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "SelectForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Select Level";
             ResumeLayout(false);
         }

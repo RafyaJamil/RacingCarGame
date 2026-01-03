@@ -97,7 +97,9 @@
             Controls.Add(label2);
             Controls.Add(label1);
             ForeColor = Color.White;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "InstructionsForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Instructions";
             ResumeLayout(false);
         }

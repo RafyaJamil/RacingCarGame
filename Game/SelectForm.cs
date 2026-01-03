@@ -30,5 +30,12 @@ namespace Game
             RacingCar c = new RacingCar();
             c.ShowDialog();
         }
-    } 
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Level2Form level2 = new Level2Form();
+            level2.ShowDialog();
+        }
+    }
 }

@@ -78,7 +78,9 @@
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "PlayerInfoForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Player Information";
             ResumeLayout(false);
             PerformLayout();
