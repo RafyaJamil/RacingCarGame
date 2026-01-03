@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Semester 2\\OOP Lab\\Game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\racingcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\racingcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,24 +11,24 @@
       "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\component\\audio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\component\\audio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\systems\\collisionsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\systems\\collisionsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|C:\\Semester 2\\OOP Lab\\Game\\game\\racingcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\racingcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\core\\audiotrack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\core\\audiotrack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\interfaces\\iaudio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\interfaces\\iaudio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\component\\audio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\component\\audio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\audios\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\audios\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\movements\\keyboardmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\movements\\keyboardmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,103 +43,91 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Program.cs",
-              "RelativeDocumentMoniker": "Game\\Program.cs",
-              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Program.cs",
-              "RelativeToolTip": "Game\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-02T07:06:17.835Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Entities\\Player.cs",
-              "RelativeDocumentMoniker": "Game\\Entities\\Player.cs",
-              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Entities\\Player.cs",
-              "RelativeToolTip": "Game\\Entities\\Player.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAqwIMAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-02T06:24:03.589Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "RacingCar.cs",
               "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\RacingCar.cs",
               "RelativeDocumentMoniker": "Game\\RacingCar.cs",
               "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\RacingCar.cs",
               "RelativeToolTip": "Game\\RacingCar.cs",
-              "ViewState": "AgIAAPkAAAAAAAAAAADwv9sAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHcBAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-01T18:31:45.331Z",
+              "WhenOpened": "2026-01-03T00:10:32.427Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Audio.cs",
-              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Component\\Audio.cs",
-              "RelativeDocumentMoniker": "Game\\Component\\Audio.cs",
-              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Component\\Audio.cs",
-              "RelativeToolTip": "Game\\Component\\Audio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAKAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Entities\\Player.cs",
+              "RelativeDocumentMoniker": "Game\\Entities\\Player.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Entities\\Player.cs",
+              "RelativeToolTip": "Game\\Entities\\Player.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAIwKYAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-01T18:44:22.786Z",
+              "WhenOpened": "2026-01-03T00:11:17.085Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CollisionSystem.cs",
-              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Systems\\CollisionSystem.cs",
-              "RelativeDocumentMoniker": "Game\\Systems\\CollisionSystem.cs",
-              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Systems\\CollisionSystem.cs",
-              "RelativeToolTip": "Game\\Systems\\CollisionSystem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-02T06:23:49.492Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AudioTrack.cs",
-              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Core\\AudioTrack.cs",
-              "RelativeDocumentMoniker": "Game\\Core\\AudioTrack.cs",
-              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Core\\AudioTrack.cs",
-              "RelativeToolTip": "Game\\Core\\AudioTrack.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAkwBYAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-01T18:43:41.498Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IAudio.cs",
-              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Interfaces\\IAudio.cs",
-              "RelativeDocumentMoniker": "Game\\Interfaces\\IAudio.cs",
-              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Interfaces\\IAudio.cs",
-              "RelativeToolTip": "Game\\Interfaces\\IAudio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-01T18:43:16.477Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "RacingCar.cs [Design]",
               "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\RacingCar.cs",
               "RelativeDocumentMoniker": "Game\\RacingCar.cs",
               "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\RacingCar.cs [Design]",
               "RelativeToolTip": "Game\\RacingCar.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-01T18:26:03.7Z",
+              "WhenOpened": "2026-01-02T17:25:06.939Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Program.cs",
+              "RelativeDocumentMoniker": "Game\\Program.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Program.cs",
+              "RelativeToolTip": "Game\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-03T00:10:55.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AudioManager.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Audios\\AudioManager.cs",
+              "RelativeDocumentMoniker": "Game\\Audios\\AudioManager.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Audios\\AudioManager.cs",
+              "RelativeToolTip": "Game\\Audios\\AudioManager.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAQwDIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-03T00:43:19.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Audio.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Component\\Audio.cs",
+              "RelativeDocumentMoniker": "Game\\Component\\Audio.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Component\\Audio.cs",
+              "RelativeToolTip": "Game\\Component\\Audio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-03T05:06:50.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "KeyboardMovement.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\KeyboardMovement.cs",
+              "RelativeDocumentMoniker": "Game\\Movements\\KeyboardMovement.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\KeyboardMovement.cs",
+              "RelativeToolTip": "Game\\Movements\\KeyboardMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-03T01:29:12.408Z"
             }
           ]
         }

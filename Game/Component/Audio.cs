@@ -29,40 +29,24 @@ namespace Game.Component
         }
         public void PlaySound(string name)
         {
-            try
+            try 
             {
-                if (!sounds.ContainsKey(name))
+                if (!sounds.ContainsKey(name)) return;
+                if (outputs.ContainsKey(name))
                     return;
-
-                AudioTrack sound = sounds[name];
-
-                string fullPath = Path.Combine(
-                    AppDomain.CurrentDomain.BaseDirectory,
-                    sound.FilePath
-                );
-
-                if (!File.Exists(fullPath))
-                    return; // silently ignore
-
-                AudioFileReader reader = new AudioFileReader(fullPath);
+                AudioTrack sound = sounds[name]; 
+                string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, sound.FilePath); 
+                if (!File.Exists(fullPath)) return; // silently ignore
+                AudioFileReader reader = new AudioFileReader(fullPath); 
                 reader.Volume = sound.Volume;
-
                 WaveOutEvent output = new WaveOutEvent();
                 output.Init(reader);
-
-                if (sound.Loop)
-                {
-                    output.PlaybackStopped += (s, e) =>
-                    {
-                        reader.Position = 0;
-                        output.Play();
-                    };
-                }
-
+               
                 readers[name] = reader;
                 outputs[name] = output;
-
                 output.Play();
+
+
             }
             catch
             {

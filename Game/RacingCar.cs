@@ -4,6 +4,7 @@ using Game.Movements;
 using Game.Properties;
 using Game.Systems;
 using Game.Component;
+using Game.Audios;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -18,7 +19,6 @@ namespace Game
         PhysicsSystem physics = new PhysicsSystem();
         CollisionSystem collisions = new CollisionSystem();
         System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-        Audio audio = new Audio();
 
         Image roadImage;
         Image grassImage;
@@ -56,13 +56,16 @@ namespace Game
         Button endGameButton;
         Button nextLevelButton;
 
+        bool showEndMessage = false;
+        string endMessageText = "";
+        bool endMessageActive = false;
+
+
+
         public RacingCar()
         {
             InitializeComponent();
             DoubleBuffered = true;
-
-            SetupAudio();
-            Player.AudioSystem = audio;// 👈 سب سے پہلے
 
             roadImage = Resources.Roadimage;
             grassImage = Resources.grass;
@@ -92,25 +95,7 @@ namespace Game
             SetupEndGameButton();
             SetupNextLevelButton();
             SetupTimer();
-            this.Shown += RacingCar_Shown;
         }
-
-        private void RacingCar_Shown(object? sender, EventArgs e)
-        {
-            audio.PlaySound("bgm");
-        }
-
-
-        void SetupAudio()
-        {
-            audio.AddSound(new AudioTrack("bgm","Sounds/bgmusic.wav", true));
-            audio.AddSound(new AudioTrack("jump", "Sounds/jump.wav", false));
-            audio.AddSound(new AudioTrack("crash", "Sounds/crash.wav", false));
-            audio.AddSound(new AudioTrack("win", "Sounds/win.wav", false));
-            audio.AddSound(new AudioTrack("energyEater", "Sounds/energyEater.wav", false));
-            audio.AddSound(new AudioTrack("collision", "Sounds/collision.wav", false));
-        }
-
 
         void SetupGame()
         {
@@ -143,7 +128,7 @@ namespace Game
             {
                 var player = game.Objects.OfType<Player>().FirstOrDefault();
                 player?.TryJump();
-                audio.PlaySound("jump");
+                AudioManager.Play("jump");
             };
             Controls.Add(jumpButton);
         }
@@ -217,14 +202,12 @@ namespace Game
             if (!isPaused)
             {
                 timer.Stop();
-                audio.Stop("bgm");
                 isPaused = true;
                 pauseButton.Text = "RESUME";
             }
             else
             {
                 timer.Start();
-                audio.PlaySound("bgm");
                 isPaused = false;
                 pauseButton.Text = "PAUSE";
             }
@@ -242,11 +225,18 @@ namespace Game
 
             isGameOver = false;
             isGameWin = false;
-            audio.StopAll();
-            audio.PlaySound("bgm");
+            showEndMessage = false;   // ⭐⭐⭐ IMPORTANT
+            endMessageText = "";
+            endMessageActive = false;
+
+            restartButton.Visible = false;
+            endGameButton.Visible = false;
+            nextLevelButton.Visible = false;
+
 
             SetupGame();
-
+            AudioManager.StopAll();     // pehle sab band
+            AudioManager.Play("bgm");
             timer.Start();
         }
 
@@ -257,32 +247,61 @@ namespace Game
             DrawScrollingGrass(g, 0, (int)roadX);
             DrawScrollingRoad(g, (int)roadX, (int)roadWidth);
             DrawScrollingGrass(g, (int)(roadX + roadWidth), ClientSize.Width - (int)(roadX + roadWidth));
-
+            // 🔹 pehle saare objects EXCEPT player
             foreach (var obj in game.Objects)
             {
+                if (obj is Player) continue;
+
                 if (obj.Sprite != null)
-                    g.DrawImage(obj.Sprite, obj.Position.X - obj.Size.Width / 2,
-                                       obj.Position.Y - obj.Size.Height / 2,
-                                       obj.Size.Width, obj.Size.Height);
+                    e.Graphics.DrawImage(obj.Sprite,
+                        obj.Position.X - obj.Size.Width / 2,
+                        obj.Position.Y - obj.Size.Height / 2,
+                        obj.Size.Width,
+                        obj.Size.Height);
             }
 
+            // 🔹 phir player LAST mein (jump ke upar dikhane ke liye)
             var player = game.Objects.OfType<Player>().FirstOrDefault();
-            if (player != null && !string.IsNullOrEmpty(player.JumpMessage))
+            if (player != null && player.Sprite != null)
             {
-                using (Font font = new Font("Arial", 16, FontStyle.Bold))
-                using (Brush brush = new SolidBrush(Color.Yellow))
-                {
-                    g.DrawString(player.JumpMessage, font, brush, 50, 50);
-                }
+                e.Graphics.DrawImage(player.Sprite,
+                    player.Position.X - player.Size.Width / 2,
+                    player.Position.Y - player.Size.Height / 2,
+                    player.Size.Width,
+                    player.Size.Height);
             }
 
-            if (isGameOver)
-                DrawEndScreen(g, "YOU FAILED");
+            var playerMsg = game.Objects.OfType<Player>().FirstOrDefault();
+            if (playerMsg != null && !string.IsNullOrEmpty(playerMsg.JumpMessage))
+            {
+                string msg = playerMsg.JumpMessage;
 
-            if (isGameWin)
-                DrawEndScreen(g, "YOU WIN!");
+                Font msgFont = new Font("Segoe UI", 22, FontStyle.Bold);
+
+                Size textSize = TextRenderer.MeasureText(msg, msgFont);
+
+                int x = (ClientSize.Width - textSize.Width) / 2;
+                int y = (ClientSize.Height / 2) - 100; // thora upar center se
+
+                TextRenderer.DrawText(
+                    e.Graphics,
+                    msg,
+                    msgFont,
+                    new Point(x, y),
+                    Color.Red
+                );
+            }
+
+
 
             DrawHUD(g);
+
+            if (showEndMessage && endMessageActive)
+            {
+                DrawEndScreen(g, endMessageText);
+            }
+
+
         }
 
         void DrawEndScreen(Graphics g, string message)
@@ -310,6 +329,7 @@ namespace Game
 
         void Timer_Tick(object sender, EventArgs e)
         {
+
             grassOffsetY += grassSpeed;
             roadOffsetY += roadSpeed;
 
@@ -333,18 +353,34 @@ namespace Game
                 if (player.Fuel <= 0)
                 {
                     isGameOver = true;
-                    isPaused = true;
-                    audio.Stop("bgm");
-                    timer.Stop();
+                    showEndMessage = true;
+                    endMessageText = "YOU FAILED";
+                    
+                    endMessageActive = true; // 
+
+                    AudioManager.Stop("bgm");
+                    AudioManager.Play("crash");
+                    restartButton.Visible = true;
+                    endGameButton.Visible = true;
+                    nextLevelButton.Visible = false;
+                    Invalidate();
+                    return;
                 }
 
                 if (player.Score >= maxScore)
                 {
                     isGameWin = true;
-                    isPaused = true;
-                    audio.Stop("bgm");
-                    audio.PlaySound("win");
-                    timer.Stop();
+                    showEndMessage = true;
+                    endMessageText = "YOU WIN!";
+                    endMessageActive = true;
+                    
+                    AudioManager.Stop("bgm");
+                    AudioManager.Play("win");
+                    restartButton.Visible = true;
+                    endGameButton.Visible = true;
+                    nextLevelButton.Visible = false;
+                    Invalidate();
+                    return;
                 }
             }
 
@@ -371,9 +407,7 @@ namespace Game
             }
 
             // Buttons visibility
-            if (restartButton != null) restartButton.Visible = isGameOver || isGameWin;
-            if (endGameButton != null) endGameButton.Visible = isGameOver || isGameWin;
-            if (nextLevelButton != null) nextLevelButton.Visible = isGameWin;
+            
 
             game.Cleanup();
             Invalidate();

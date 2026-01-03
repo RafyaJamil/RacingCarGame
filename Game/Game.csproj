@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Sounds\bgmusic.wav" />
+    <None Remove="Sounds\bgmusic.mp3" />
     <None Remove="Sounds\collision.wav" />
     <None Remove="Sounds\crash.wav" />
     <None Remove="Sounds\jump.wav" />
@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Sounds\bgmusic.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="Sounds\bgmusic.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Sounds\collision.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

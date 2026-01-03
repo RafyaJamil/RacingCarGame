@@ -1,5 +1,6 @@
 ﻿using Game.Core;
 using Game.Component;
+using Game.Audios;
 using Game.Entities;
 using Game.Interfaces;
 using Game.Movements;
@@ -19,7 +20,8 @@ namespace Game.Entities
         public string Tag { get; set; } = "Player";
 
         private Image? originalSprite;
-        public static Audio? AudioSystem;
+
+
 
 
         public int framesWithoutBooster { get; set; } = 0;
@@ -69,6 +71,7 @@ namespace Game.Entities
 
         public override void Update(GameTime gameTime)
         {
+            
             // Keyboard move
             Movement?.Move(this, gameTime);
 
@@ -102,21 +105,25 @@ namespace Game.Entities
 
             if (other is Enemy enemy)
             {
-                Fuel -= 20;
-                if (Fuel < 0) Fuel = 0;
+                Fuel -= 15;
+                if (Fuel < 0)
+                {
+                    Fuel = 0;
+                }
 
-                this.PushbackY = 5;
-                enemy.PushbackY = -10;
+                    this.PushbackY = 5;
+                    enemy.PushbackY = -18;
 
-                enemy.Velocity = new PointF(enemy.Velocity.X, enemy.Velocity.Y * 0.6f);
+                    enemy.Velocity = new PointF(enemy.Velocity.X, enemy.Velocity.Y * 0.6f);
 
-                AudioSystem?.PlaySound("collision");
+                    AudioManager.Play("collision");
 
                 // 🔊 level fail sound (jab fuel zero ho)
                 if (Fuel <= 0)
                 {
-                    AudioSystem?.Stop("bgm");
-                    AudioSystem?.PlaySound("crash");
+                    AudioManager.Stop("bgm");
+                    AudioManager.Play("crash");
+
                 }
             }
 
@@ -129,24 +136,23 @@ namespace Game.Entities
                 framesWithoutBooster = 0;
                 booster.IsActive = false;
 
-                AudioSystem?.PlaySound("energyEater");
+                AudioManager.Play("energyEater");
             }
         }
 
         // Jump only via button
         public void TryJump()
         {
-            if (Fuel >= MaxFuel)
+            if (Fuel >= 50)
             {
                 originalSprite ??= Sprite;
                 JumpMovement?.StartJump();
-                JumpMessage = "JUMP!";
                 jumpFrameIndex = 0;
                 jumpFrameCounter = 0;
             }
             else
             {
-                JumpMessage = "You can only jump when fuel is full!";
+                JumpMessage = "Need more fuel to jump!";
                 var t = new System.Windows.Forms.Timer();
                 t.Interval = 1000;
                 t.Tick += (s, e) =>
