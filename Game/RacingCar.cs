@@ -58,10 +58,11 @@ namespace Game
         Button backToMenuButton;
 
 
-        bool showEndMessage = false;
-        string endMessageText = "";
-        bool endMessageActive = false;
+      
+
         Label levelLabel;
+        Label endMessageLabel;
+
 
 
         public RacingCar()
@@ -98,6 +99,7 @@ namespace Game
             SetupEndGameButton();
             SetupNextLevelButton();
             SetupBackToMenuButton();
+            SetupEndMessageLabel();
             SetupTimer();
             AudioManager.StopAll();   // pehle sab band
             AudioManager.Play("bgm"); // level 2 ka music start
@@ -240,16 +242,13 @@ namespace Game
 
             isGameOver = false;
             isGameWin = false;
-            showEndMessage = false;   // ⭐⭐⭐ IMPORTANT
-            endMessageText = "";
-            endMessageActive = false;
 
             restartButton.Visible = false;
             endGameButton.Visible = false;
             nextLevelButton.Visible = false;
             backToMenuButton.Visible = false;
-
-
+            endMessageLabel.Visible = false;
+            endMessageLabel.Text = "";
 
             SetupGame();
             AudioManager.StopAll();     // pehle sab band
@@ -313,45 +312,12 @@ namespace Game
 
             DrawHUD(g);
 
-            if (showEndMessage && endMessageActive)
-            {
-                DrawEndScreen(g, endMessageText);
-            }
 
-
-        }
-
-        void DrawEndScreen(Graphics g, string message)
-        {
-            try
-            {
-                using (Brush bg = new SolidBrush(Color.FromArgb(180, 0, 0, 0)))
-                using (Font font = new Font("Arial", 36, FontStyle.Bold))
-                using (Brush textBrush = Brushes.White)
-                {
-                    g.FillRectangle(bg, 0, 0, ClientSize.Width, ClientSize.Height);
-                    SizeF textSize = g.MeasureString(message, font);
-                    float x = Math.Max(0, (ClientSize.Width - textSize.Width) / 2);
-                    float y = Math.Max(0, (ClientSize.Height - textSize.Height) / 2 - 40);
-                    g.DrawString(message, font, textBrush, x, y);
-                }
-            }
-            catch (Exception ex)
-            {
-                // Log the exception or handle it gracefully
-                Console.WriteLine("Error drawing end screen: " + ex.Message);
-            }
         }
 
 
         void Timer_Tick(object sender, EventArgs e)
         {
-
-            if (showEndMessage && endMessageActive)
-            {
-                Invalidate();   // 🔥 har frame redraw
-                return;         // game logic stop
-            }
 
             grassOffsetY += grassSpeed;
             roadOffsetY += roadSpeed;
@@ -373,13 +339,11 @@ namespace Game
                 if (player.Position.X < lanes[0]) player.Position = new PointF(lanes[0], player.Position.Y);
                 if (player.Position.X > lanes[2]) player.Position = new PointF(lanes[2], player.Position.Y);
 
-                if (player.Fuel <= 0 && !endMessageActive)
+                if (player.Fuel <= 0 )
                 {
                     isGameOver = true;
-                    showEndMessage = true;
-                    endMessageText = "YOU FAILED";
-
-                    endMessageActive = true; // 
+                    endMessageLabel.Text = "YOU FAILED";
+                    endMessageLabel.Visible = true;
                     timer.Stop();
                     AudioManager.Stop("bgm");
                     AudioManager.Play("crash");
@@ -390,12 +354,11 @@ namespace Game
                     Invalidate();
                 }
 
-                if (player.Score >= maxScore && !endMessageActive)
+                if (player.Score >= maxScore)
                 {
                     isGameWin = true;
-                    showEndMessage = true;
-                    endMessageText = "YOU WIN!";
-                    endMessageActive = true;
+                    endMessageLabel.Text = "YOU WIN!";
+                    endMessageLabel.Visible = true;
                     timer.Stop();
                     AudioManager.Stop("bgm");
                     AudioManager.Play("win");
@@ -553,6 +516,27 @@ namespace Game
 
             Controls.Add(backToMenuButton);
         }
+
+        void SetupEndMessageLabel()
+        {
+            endMessageLabel = new Label();
+            endMessageLabel.Text = "";
+            endMessageLabel.Size = new Size(400, 80);
+            endMessageLabel.Font = new Font("Segoe UI", 32, FontStyle.Bold);
+            endMessageLabel.ForeColor = Color.White;
+            endMessageLabel.BackColor = Color.FromArgb(180, 0, 0, 0);
+            endMessageLabel.TextAlign = ContentAlignment.MiddleCenter;
+
+            // screen center
+            endMessageLabel.Location = new Point(
+                (ClientSize.Width - endMessageLabel.Width) / 2,
+                (ClientSize.Height - endMessageLabel.Height) / 2 - 60
+            );
+
+            endMessageLabel.Visible = false;
+            Controls.Add(endMessageLabel);
+        }
+
 
     }
 }
