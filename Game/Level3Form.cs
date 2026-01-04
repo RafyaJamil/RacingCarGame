@@ -348,6 +348,7 @@ namespace Game
 
                 if (player.Score >= maxScore)
                 {
+                    FileManager.SavePlayer(GameSession.PlayerName, 3, player.Score);
                     isGameWin = true;
                     endMessageLabel.Text = "YOU WIN!";
                     endMessageLabel.Visible = true;

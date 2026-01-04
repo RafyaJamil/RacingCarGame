@@ -341,6 +341,7 @@ namespace Game
 
                 if (player.Fuel <= 0 )
                 {
+                   
                     isGameOver = true;
                     endMessageLabel.Text = "YOU FAILED";
                     endMessageLabel.Visible = true;
@@ -356,6 +357,7 @@ namespace Game
 
                 if (player.Score >= maxScore)
                 {
+                    FileManager.SavePlayer(GameSession.PlayerName, 1, player.Score);
                     isGameWin = true;
                     endMessageLabel.Text = "YOU WIN!";
                     endMessageLabel.Visible = true;
