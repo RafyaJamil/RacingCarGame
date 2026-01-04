@@ -33,6 +33,7 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
+            button5 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -87,6 +88,7 @@
             button3.TabIndex = 3;
             button3.Text = "Level 3";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -103,6 +105,21 @@
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
+            // button5
+            // 
+            button5.BackColor = Color.Red;
+            button5.Cursor = Cursors.Hand;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button5.ForeColor = Color.White;
+            button5.Location = new Point(629, 433);
+            button5.Name = "button5";
+            button5.Size = new Size(100, 56);
+            button5.TabIndex = 5;
+            button5.Text = "Exit";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
             // SelectForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -110,6 +127,7 @@
             BackgroundImage = Properties.Resources.instructions;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(778, 544);
+            Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -129,5 +147,6 @@
         private Button button2;
         private Button button3;
         private Button button4;
+        private Button button5;
     }
 }

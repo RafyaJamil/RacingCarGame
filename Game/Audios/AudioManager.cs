@@ -11,6 +11,7 @@ namespace Game.Audios
     internal class AudioManager
     {
         private static Audio audio = new Audio();
+        private static bool bgmPlaying = false;
 
         public static void Init()
         {
@@ -49,8 +50,16 @@ namespace Game.Audios
                 false
             ));
         }
-        public static void Play(string name) => audio.PlaySound(name);
+
+        public static bool IsPlaying(string sound)
+        {
+            if (sound == "bgm") return bgmPlaying;
+            return false;
+        }
+
+        public static void Play(string name) => audio.PlaySound(name); 
         public static void Stop(string name) => audio.Stop(name);
+
         public static void StopAll() => audio.StopAll();
         public static void SetVolume(string name, float volume) =>
             audio.SetVolume(name, volume);

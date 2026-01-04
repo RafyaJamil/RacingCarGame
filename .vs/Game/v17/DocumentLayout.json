@@ -3,52 +3,40 @@
   "WorkspaceRootPath": "C:\\Semester 2\\OOP Lab\\Game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\level2form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\level2form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\racingcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\racingcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\playerinfoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\playerinfoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\selectform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\selectform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\instructionsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\instructionsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\level2form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\level2form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\selectform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\selectform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|C:\\Semester 2\\OOP Lab\\Game\\game\\racingcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\racingcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\level3form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\level3form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\component\\audio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\component\\audio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\level2form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\level2form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\level2form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\level2form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\racingcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\racingcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\audios\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\audios\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|C:\\Semester 2\\OOP Lab\\Game\\game\\playerinfoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\playerinfoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\component\\audio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|solutionrelative:game\\component\\audio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D47C1CD7-FE46-4594-89A8-8D0D65FEE52A}|Game\\Game.csproj|c:\\semester 2\\oop lab\\game\\game\\movements\\keyboardmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,17 +50,42 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "Level2Form.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Level2Form.cs",
+              "RelativeDocumentMoniker": "Game\\Level2Form.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Level2Form.cs",
+              "RelativeToolTip": "Game\\Level2Form.cs",
+              "ViewState": "AgIAAG4BAAAAAAAAAADwv3sBAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-04T01:39:33.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Level2Form.cs [Design]",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Level2Form.cs",
+              "RelativeDocumentMoniker": "Game\\Level2Form.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Level2Form.cs [Design]",
+              "RelativeToolTip": "Game\\Level2Form.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-04T01:39:31.176Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "RacingCar.cs",
               "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\RacingCar.cs",
               "RelativeDocumentMoniker": "Game\\RacingCar.cs",
               "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\RacingCar.cs",
               "RelativeToolTip": "Game\\RacingCar.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAQwPQBAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAHABAAAAAAAAAAAmwIQBAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-03T00:10:32.427Z",
               "EditorCaption": ""
@@ -80,55 +93,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Level2Form.cs",
-              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Level2Form.cs",
-              "RelativeDocumentMoniker": "Game\\Level2Form.cs",
-              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Level2Form.cs",
-              "RelativeToolTip": "Game\\Level2Form.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAAwDEAAAAhAAAAAAAAAA==",
+              "Title": "Level3Form.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Level3Form.cs",
+              "RelativeDocumentMoniker": "Game\\Level3Form.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Level3Form.cs",
+              "RelativeToolTip": "Game\\Level3Form.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0BAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-03T20:33:36.267Z",
+              "WhenOpened": "2026-01-03T23:49:12.606Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "InstructionsForm.cs [Design]",
-              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\InstructionsForm.cs",
-              "RelativeDocumentMoniker": "Game\\InstructionsForm.cs",
-              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\InstructionsForm.cs [Design]",
-              "RelativeToolTip": "Game\\InstructionsForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-03T21:08:49.004Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SelectForm.cs [Design]",
-              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\SelectForm.cs",
-              "RelativeDocumentMoniker": "Game\\SelectForm.cs",
-              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\SelectForm.cs [Design]",
-              "RelativeToolTip": "Game\\SelectForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-03T20:46:49.071Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Level2Form.cs [Design]",
-              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Level2Form.cs",
-              "RelativeDocumentMoniker": "Game\\Level2Form.cs",
-              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Level2Form.cs [Design]",
-              "RelativeToolTip": "Game\\Level2Form.cs [Design]",
+              "Title": "AudioManager.cs",
+              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Audios\\AudioManager.cs",
+              "RelativeDocumentMoniker": "Game\\Audios\\AudioManager.cs",
+              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Audios\\AudioManager.cs",
+              "RelativeToolTip": "Game\\Audios\\AudioManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-03T20:30:11.335Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-01-03T00:43:19.29Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "PlayerInfoForm.cs [Design]",
               "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\PlayerInfoForm.cs",
               "RelativeDocumentMoniker": "Game\\PlayerInfoForm.cs",
@@ -140,19 +130,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SelectForm.cs",
-              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\SelectForm.cs",
-              "RelativeDocumentMoniker": "Game\\SelectForm.cs",
-              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\SelectForm.cs",
-              "RelativeToolTip": "Game\\SelectForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-03T20:46:51.745Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 7,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Entities\\Player.cs",
@@ -161,47 +138,24 @@
               "RelativeToolTip": "Game\\Entities\\Player.cs",
               "ViewState": "AgIAAG0AAAAAAAAAAAAUwKQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-03T00:11:17.085Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-03T00:11:17.085Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "RacingCar.cs [Design]",
-              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\RacingCar.cs",
-              "RelativeDocumentMoniker": "Game\\RacingCar.cs",
-              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\RacingCar.cs [Design]",
-              "RelativeToolTip": "Game\\RacingCar.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-02T17:25:06.939Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Program.cs",
               "RelativeDocumentMoniker": "Game\\Program.cs",
               "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Program.cs",
               "RelativeToolTip": "Game\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAswBMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-03T00:10:55.971Z"
+              "WhenOpened": "2026-01-03T00:10:55.971Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AudioManager.cs",
-              "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Audios\\AudioManager.cs",
-              "RelativeDocumentMoniker": "Game\\Audios\\AudioManager.cs",
-              "ToolTip": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Audios\\AudioManager.cs",
-              "RelativeToolTip": "Game\\Audios\\AudioManager.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAQwDIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-03T00:43:19.29Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
               "Title": "Audio.cs",
               "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Component\\Audio.cs",
               "RelativeDocumentMoniker": "Game\\Component\\Audio.cs",
@@ -213,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 9,
               "Title": "KeyboardMovement.cs",
               "DocumentMoniker": "C:\\Semester 2\\OOP Lab\\Game\\Game\\Movements\\KeyboardMovement.cs",
               "RelativeDocumentMoniker": "Game\\Movements\\KeyboardMovement.cs",

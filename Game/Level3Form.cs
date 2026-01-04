@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 namespace Game
 {
-    public partial class Level2Form : Form
+    public partial class Level3Form : Form
     {
         Game.Core.Game game = new Game.Core.Game();
         PhysicsSystem physics = new PhysicsSystem();
@@ -35,19 +35,19 @@ namespace Game
         float grassOffsetY = 0f;
         float roadOffsetY = 0f;
 
-        float grassSpeed = 5f;
-        float roadSpeed = 8f;
+        float grassSpeed = 4f;
+        float roadSpeed = 10f;
 
         Random random = new Random();
 
         int enemyCounter = 0;
-        int enemyInterval = 40;
+        int enemyInterval = 30;
 
         int boosterCounter = 0;
-        int boosterInterval = 260;
+        int boosterInterval = 180;
 
         const int framesFor5Seconds = 300;
-        const int maxScore = 100;
+        const int maxScore = 120;
 
         Button jumpButton;
         bool isPaused = false;
@@ -64,11 +64,10 @@ namespace Game
         string endMessageText = "";
         bool endMessageActive = false;
         Label levelLabel;
-        public Level2Form()
+        public Level3Form()
         {
             InitializeComponent();
             DoubleBuffered = true;
-
             SetupLevelLabel();
 
             roadImage = Resources.Roadimage;
@@ -100,10 +99,8 @@ namespace Game
             SetupNextLevelButton();
             SetupBackToMenuButton();
             SetupTimer();
-            if (!AudioManager.IsPlaying("bgm"))
-            {
-                AudioManager.Play("bgm"); // BGM start
-            }
+            AudioManager.StopAll();   // pehle sab band
+            AudioManager.Play("bgm"); // level 2 ka music start
         }
 
         void SetupGame()
@@ -195,7 +192,16 @@ namespace Game
             nextLevelButton.FlatStyle = FlatStyle.Flat;
             nextLevelButton.Location = new Point(30, 210);
             nextLevelButton.Visible = false;
-            nextLevelButton.Click += (s, e) => RestartGame(); // next level logic
+            nextLevelButton.Click += (s, e) =>
+            {
+
+                this.Hide();   // Level 1 form hide
+                Level3Form level3 = new Level3Form();
+                level3.Show();
+
+
+            };
+
             Controls.Add(nextLevelButton);
         }
 
@@ -335,7 +341,6 @@ namespace Game
             }
         }
 
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (showEndMessage && endMessageActive)
@@ -356,7 +361,7 @@ namespace Game
                 player.framesWithoutBooster++;
                 if (player.framesWithoutBooster >= framesFor5Seconds)
                 {
-                    player.Fuel -= 15;
+                    player.Fuel -= 10;
                     if (player.Fuel < 0) player.Fuel = 0;
                     player.framesWithoutBooster = 0;
                 }
@@ -448,7 +453,7 @@ namespace Game
             {
                 Position = new PointF(lanes[lane], -120),
                 Size = new Size(100, 100),
-                Velocity = new PointF(0, 7),
+                Velocity = new PointF(0, 8),
                 Sprite = enemyCarImages[random.Next(enemyCarImages.Length)]
             });
         }
@@ -460,7 +465,7 @@ namespace Game
             {
                 Position = new PointF(lanes[lane], -60),
                 Size = new Size(50, 50),
-                Velocity = new PointF(0, 4),
+                Velocity = new PointF(0, 5),
                 Sprite = Resources.energy
             });
         }
@@ -489,21 +494,19 @@ namespace Game
             int scoreX = (int)(hudX + barWidth + 25);
             g.DrawString("SCORE", titleFont, new SolidBrush(labelColor), scoreX, fuelY - 30);
             g.FillRectangle(new SolidBrush(hudBgColor), scoreX, fuelY, barWidth, barHeight);
-            int maxBlocks = 10;
+            int maxBlocks = 12;
             int filledBlocks = Math.Min((player.Score * maxBlocks )/ maxScore, maxBlocks);
             for (int i = 0; i < maxBlocks; i++)
             {
                 Brush block = (i < filledBlocks) ? Brushes.Lime : Brushes.DimGray;
-                g.FillRectangle(block, scoreX, fuelY + (maxBlocks - 1 - i) * 26,barWidth,26);
+                g.FillRectangle(block, scoreX, fuelY + (maxBlocks - 1 - i) * 22, barWidth, 18);
             }
         }
-
-
 
         void SetupLevelLabel()
         {
             levelLabel = new Label();
-            levelLabel.Text = "LEVEL 2";
+            levelLabel.Text = "LEVEL 3";
             levelLabel.Font = new Font("Segoe UI", 28, FontStyle.Bold); // stylish aur badi font
             levelLabel.ForeColor = Color.Gold; // bright aur visible color
             levelLabel.BackColor = Color.Transparent; // background transparent
@@ -518,7 +521,7 @@ namespace Game
             Controls.Add(levelLabel);
         }
 
-        private void Level2Form_Load(object sender, EventArgs e)
+        private void RacingCar_Load(object sender, EventArgs e)
         {
 
         }

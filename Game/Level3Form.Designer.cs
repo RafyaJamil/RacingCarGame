@@ -1,6 +1,6 @@
 ﻿namespace Game
 {
-    partial class Level2Form
+    partial class Level3Form
     {
         /// <summary>
         /// Required designer variable.
@@ -36,16 +36,15 @@
             // 
             timer1.Tick += timer1_Tick;
             // 
-            // Level2Form
+            // Level3Form
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1178, 544);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "Level2Form";
+            Name = "Level3Form";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Level2Form";
-            Load += Level2Form_Load;
+            Text = "Level3Form";
             ResumeLayout(false);
         }
 

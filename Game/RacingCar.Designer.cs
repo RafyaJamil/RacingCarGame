@@ -32,17 +32,15 @@
             timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
-            // timer1
-            // 
-            
-            // 
             // RacingCar
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1045, 501);
+            ClientSize = new Size(1178, 544);
             Name = "RacingCar";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "RacingCar";
+            Load += RacingCar_Load;
             ResumeLayout(false);
         }
 

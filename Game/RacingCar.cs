@@ -55,6 +55,8 @@ namespace Game
         Button restartButton;
         Button endGameButton;
         Button nextLevelButton;
+        Button backToMenuButton;
+
 
         bool showEndMessage = false;
         string endMessageText = "";
@@ -95,6 +97,7 @@ namespace Game
             SetupRestartButton();
             SetupEndGameButton();
             SetupNextLevelButton();
+            SetupBackToMenuButton();
             SetupTimer();
             AudioManager.StopAll();   // pehle sab band
             AudioManager.Play("bgm"); // level 2 ka music start
@@ -191,12 +194,12 @@ namespace Game
             nextLevelButton.Visible = false;
             nextLevelButton.Click += (s, e) =>
             {
-                timer.Stop();
 
+                this.Hide();   // Level 1 form hide
                 Level2Form level2 = new Level2Form();
                 level2.Show();
 
-                this.Hide();   // Level 1 form hide
+
             };
 
             Controls.Add(nextLevelButton);
@@ -244,6 +247,8 @@ namespace Game
             restartButton.Visible = false;
             endGameButton.Visible = false;
             nextLevelButton.Visible = false;
+            backToMenuButton.Visible = false;
+
 
 
             SetupGame();
@@ -373,7 +378,7 @@ namespace Game
                     isGameOver = true;
                     showEndMessage = true;
                     endMessageText = "YOU FAILED";
-                    
+
                     endMessageActive = true; // 
                     timer.Stop();
                     AudioManager.Stop("bgm");
@@ -381,6 +386,7 @@ namespace Game
                     restartButton.Visible = true;
                     endGameButton.Visible = true;
                     nextLevelButton.Visible = false;
+                    backToMenuButton.Visible = true;
                     Invalidate();
                 }
 
@@ -396,6 +402,7 @@ namespace Game
                     restartButton.Visible = true;
                     endGameButton.Visible = true;
                     nextLevelButton.Visible = true;
+                    backToMenuButton.Visible = true;
                     Invalidate();
                 }
             }
@@ -423,7 +430,7 @@ namespace Game
             }
 
             // Buttons visibility
-            
+
 
             game.Cleanup();
             Invalidate();
@@ -517,5 +524,35 @@ namespace Game
 
             Controls.Add(levelLabel);
         }
+
+        private void RacingCar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        void SetupBackToMenuButton()
+        {
+            backToMenuButton = new Button();
+            backToMenuButton.Text = "MAIN MENU";
+            backToMenuButton.Size = new Size(140, 45);
+            backToMenuButton.BackColor = Color.MediumPurple;
+            backToMenuButton.ForeColor = Color.White;
+            backToMenuButton.FlatStyle = FlatStyle.Flat;
+            backToMenuButton.Location = new Point(30, 270); // End Game کے نیچے
+            backToMenuButton.Visible = false;
+
+            backToMenuButton.Click += (s, e) =>
+            {
+                AudioManager.StopAll();
+
+                SelectForm menu = new SelectForm();
+                menu.Show();
+
+                this.Close(); // current level بند
+            };
+
+            Controls.Add(backToMenuButton);
+        }
+
     }
 }

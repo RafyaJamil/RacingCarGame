@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game.Audios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,6 +37,19 @@ namespace Game
             this.Hide();
             Level2Form level2 = new Level2Form();
             level2.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Level3Form level3 = new Level3Form();
+            level3.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AudioManager.StopAll();   // music بند
+            Application.Exit();
         }
     }
 }
