@@ -133,7 +133,8 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "SelectForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Select Level";

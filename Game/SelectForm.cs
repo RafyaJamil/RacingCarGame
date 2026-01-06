@@ -48,7 +48,7 @@ namespace Game
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AudioManager.StopAll();   // music بند
+            AudioManager.StopAll();
             Application.Exit();
         }
     }

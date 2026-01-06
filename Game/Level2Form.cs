@@ -101,7 +101,7 @@ namespace Game
             SetupTimer();
             if (!AudioManager.IsPlaying("bgm"))
             {
-                AudioManager.Play("bgm"); // BGM start
+                AudioManager.Play("bgm"); 
             }
         }
 
@@ -194,7 +194,7 @@ namespace Game
             nextLevelButton.FlatStyle = FlatStyle.Flat;
             nextLevelButton.Location = new Point(30, 210);
             nextLevelButton.Visible = false;
-            nextLevelButton.Click += (s, e) => RestartGame(); // next level logic
+            nextLevelButton.Click += (s, e) => RestartGame(); 
             Controls.Add(nextLevelButton);
         }
 
@@ -242,7 +242,7 @@ namespace Game
             backToMenuButton.Visible = false;
 
             SetupGame();
-            AudioManager.StopAll();     // pehle sab band
+            AudioManager.StopAll();    
             AudioManager.Play("bgm");
             timer.Start();
         }
@@ -254,7 +254,7 @@ namespace Game
             DrawScrollingGrass(g, 0, (int)roadX);
             DrawScrollingRoad(g, (int)roadX, (int)roadWidth);
             DrawScrollingGrass(g, (int)(roadX + roadWidth), ClientSize.Width - (int)(roadX + roadWidth));
-            // 🔹 pehle saare objects EXCEPT player
+         
             foreach (var obj in game.Objects)
             {
                 if (obj is Player) continue;
@@ -267,7 +267,7 @@ namespace Game
                         obj.Size.Height);
             }
 
-            // 🔹 phir player LAST mein (jump ke upar dikhane ke liye)
+       
             var player = game.Objects.OfType<Player>().FirstOrDefault();
             if (player != null && player.Sprite != null)
             {
@@ -288,7 +288,7 @@ namespace Game
                 Size textSize = TextRenderer.MeasureText(msg, msgFont);
 
                 int x = (ClientSize.Width - textSize.Width) / 2;
-                int y = (ClientSize.Height / 2) - 100; // thora upar center se
+                int y = (ClientSize.Height / 2) - 100; 
 
                 TextRenderer.DrawText(
                     e.Graphics,
@@ -382,9 +382,7 @@ namespace Game
                 if (booster.Position.Y > 600) booster.IsActive = false;
             }
 
-            // Buttons visibility
-
-
+           
             game.Cleanup();
             Invalidate();
         }
@@ -466,15 +464,15 @@ namespace Game
         {
             levelLabel = new Label();
             levelLabel.Text = "LEVEL 2";
-            levelLabel.Font = new Font("Segoe UI", 28, FontStyle.Bold); // stylish aur badi font
-            levelLabel.ForeColor = Color.Gold; // bright aur visible color
-            levelLabel.BackColor = Color.Transparent; // background transparent
+            levelLabel.Font = new Font("Segoe UI", 28, FontStyle.Bold); 
+            levelLabel.ForeColor = Color.Gold; 
+            levelLabel.BackColor = Color.Transparent; 
             levelLabel.AutoSize = true;
 
-            // top center position
+            
             levelLabel.Location = new Point(
                 (ClientSize.Width - levelLabel.PreferredWidth) / 2,
-                20 // upar thoda space
+                20 
             );
 
             Controls.Add(levelLabel);
@@ -493,7 +491,7 @@ namespace Game
             backToMenuButton.BackColor = Color.MediumPurple;
             backToMenuButton.ForeColor = Color.White;
             backToMenuButton.FlatStyle = FlatStyle.Flat;
-            backToMenuButton.Location = new Point(30, 270); // End Game کے نیچے
+            backToMenuButton.Location = new Point(30, 270);
             backToMenuButton.Visible = false;
 
             backToMenuButton.Click += (s, e) =>
@@ -503,7 +501,7 @@ namespace Game
                 SelectForm menu = new SelectForm();
                 menu.Show();
 
-                this.Close(); // current level بند
+                this.Close();
             };
 
             Controls.Add(backToMenuButton);
@@ -519,8 +517,6 @@ namespace Game
             endMessageLabel.ForeColor = Color.White;
             endMessageLabel.BackColor = Color.FromArgb(180, 0, 0, 0);
             endMessageLabel.TextAlign = ContentAlignment.MiddleCenter;
-
-            // screen center
             endMessageLabel.Location = new Point(
                 (ClientSize.Width - endMessageLabel.Width) / 2,
                 (ClientSize.Height - endMessageLabel.Height) / 2 - 60

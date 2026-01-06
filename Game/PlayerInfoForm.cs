@@ -32,13 +32,10 @@ namespace Game
             if (FileManager.PlayerExists(name))
             {
                 int lastLevel = FileManager.GetPlayerLevel(name);
-
-                // CONTINUE FLOW
                 OpenNextLevel(lastLevel);
             }
             else
             {
-                // NEW PLAYER → Level 1
                 SelectForm f = new SelectForm();
                 f.ShowDialog();
             }
@@ -65,8 +62,6 @@ namespace Game
                 menu.Show();
             }
         }
-
-
 
     }
 }

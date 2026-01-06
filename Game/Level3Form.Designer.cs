@@ -41,7 +41,8 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1178, 544);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Level3Form";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Level3Form";

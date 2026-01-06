@@ -7,54 +7,69 @@ namespace Game
     internal static class FileManager
     {
         private static string filePath = "playerdata.txt";
-
-        // 🔍 Check player exists or not
         public static bool PlayerExists(string name)
         {
-            if (!File.Exists(filePath)) return false;
+            if (!File.Exists(filePath))
+                return false;
 
-            return File.ReadAllLines(filePath)
-                       .Any(line => line.StartsWith(name + ","));
+            string[] lines = File.ReadAllLines(filePath);
+            foreach (string line in lines)
+            {
+                if (line.StartsWith(name + ","))
+                    return true;
+            }
+
+            return false;
         }
 
-        // 📥 Get last completed level
         public static int GetPlayerLevel(string name)
         {
-            if (!File.Exists(filePath)) return 0;
+            if (!File.Exists(filePath))
+                return 0;
 
-            var line = File.ReadAllLines(filePath)
-                           .FirstOrDefault(l => l.StartsWith(name + ","));
+            string[] lines = File.ReadAllLines(filePath);
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split(',');
+                if (parts[0] == name)
+                {
+                    int level = 0;
+                    int.TryParse(parts[1], out level);
+                    return level;
+                }
+            }
 
-            if (line == null) return 0;
-
-            string[] parts = line.Split(',');
-            return int.Parse(parts[1]);
+            return 0;
         }
 
-        // 💾 Save / Update player
         public static void SavePlayer(string name, int levelCompleted, int score)
         {
             if (!File.Exists(filePath))
                 File.Create(filePath).Close();
 
-            var lines = File.ReadAllLines(filePath).ToList();
-            int index = lines.FindIndex(l => l.StartsWith(name + ","));
+            List<string> lines = new List<string>(File.ReadAllLines(filePath));
+            bool playerFound = false;
 
-            if (index >= 0)
+            for (int i = 0; i < lines.Count; i++)
             {
-                // update only if level is higher
-                string[] parts = lines[index].Split(',');
-                int oldLevel = int.Parse(parts[1]);
-
-                if (levelCompleted > oldLevel)
+                string[] parts = lines[i].Split(',');
+                if (parts[0] == name)
                 {
-                    lines[index] = $"{name},{levelCompleted},{score}";
+                    int oldLevel = 0;
+                    int.TryParse(parts[1], out oldLevel);
+
+                    if (levelCompleted > oldLevel)
+                    {
+                        lines[i] = name + "," + levelCompleted + "," + score;
+                    }
+                    playerFound = true;
+                    break;
                 }
             }
-            else
+
+            if (!playerFound)
             {
-                // new player
-                lines.Add($"{name},{levelCompleted},{score}");
+                lines.Add(name + "," + levelCompleted + "," + score);
             }
 
             File.WriteAllLines(filePath, lines);

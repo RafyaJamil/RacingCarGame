@@ -10,7 +10,7 @@ namespace Game.Interfaces
     public interface IAudio
     {
         void AddSound(AudioTrack sound);
-        void PlaySound(string name);
+        void PlaySound(string name,bool allowMultiple = false);
         void Stop(string name);
         void StopAll();
         void SetVolume(string name, float volume);

@@ -96,8 +96,9 @@
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
+            DoubleBuffered = true;
             ForeColor = Color.White;
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "InstructionsForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Instructions";

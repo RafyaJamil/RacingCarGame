@@ -19,7 +19,6 @@ namespace Game.Systems
                     var a = (GameObject)collidables[i];
                     var b = (GameObject)collidables[j];
 
-                    // Skip collisions if player is jumping
                     if ((a is Player p1 && p1.IsJumping) || (b is Player p2 && p2.IsJumping))
                         continue;
 
@@ -28,8 +27,6 @@ namespace Game.Systems
 
                     a.OnCollision(b);
                     b.OnCollision(a);
-
-                    // Optional: resolve overlap for non-player objects
                     RectangleF overlap = RectangleF.Intersect(a.Bounds, b.Bounds);
                     if (overlap.Width > 0 && overlap.Height > 0)
                         ResolveOverlap(a, b, overlap);

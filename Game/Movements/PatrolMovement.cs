@@ -28,12 +28,12 @@ namespace Game.Movements
             if (obj.Position.X < leftBound)
             {
                 obj.Position = new PointF(leftBound, obj.Position.Y);
-                speed = Math.Abs(speed); // Move right
+                speed = Math.Abs(speed); 
             }
             else if (obj.Position.X > rightBound)
             {
                 obj.Position = new PointF(rightBound, obj.Position.Y);
-                speed = -Math.Abs(speed); // Move left
+                speed = -Math.Abs(speed);
             }
         }
     }

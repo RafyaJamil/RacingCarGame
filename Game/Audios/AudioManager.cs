@@ -1,5 +1,6 @@
-﻿using Game.Core;
-using Game.Component;
+﻿using Game.Component;
+using Game.Core;
+using NAudio.Wave;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace Game.Audios
             audio.AddSound(new AudioTrack(
                 "bgm", 
                 @"Sounds\bgmusic.mp3",
-                true   // LOOP
+                true 
             ));
 
             audio.AddSound(new AudioTrack(
@@ -56,8 +57,25 @@ namespace Game.Audios
             if (sound == "bgm") return bgmPlaying;
             return false;
         }
+        public static void Play(string name)
+        {
+            if (name == "bgm")
+            {
+                if (!bgmPlaying)
+                {
+                    audio.PlaySound(name);
+                    bgmPlaying = true;
+                }
+            }
+            else
+            {
+                
+                audio.PlaySound(name, true);
+            }
+        }
 
-        public static void Play(string name) => audio.PlaySound(name); 
+
+
         public static void Stop(string name) => audio.Stop(name);
 
         public static void StopAll() => audio.StopAll();

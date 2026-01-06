@@ -1,5 +1,4 @@
 using Game.Component;
-using Game.Core;
 using Game.Audios;
 namespace Game
 {
@@ -15,7 +14,7 @@ namespace Game
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            AudioManager.Init();        // ?? load all sounds
+            AudioManager.Init();       
             AudioManager.Play("bgm");
             Application.Run(new MainForm());
         }

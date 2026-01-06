@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace Game.Entities
 {
-    internal class EnergyBooster : GameObject, ICollidable
+    internal class EnergyBooster : GameObject
     {
         public string Tag { get; set; } = "Booster";
 
@@ -16,9 +16,7 @@ namespace Game.Entities
         {
             if (other is Player player)
             {
-                // Remove Score increment here
-                // Fuel boost handled in Player.OnCollision
-                this.IsActive = false; // Booster disappears
+                this.IsActive = false;
             }
         }
     }

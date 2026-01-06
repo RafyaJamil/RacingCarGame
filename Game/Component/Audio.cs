@@ -13,72 +13,85 @@ namespace Game.Component
 {
     public class Audio : IAudio
     {
-        //sound data
+
         private Dictionary<string, AudioTrack> sounds = new Dictionary<string, AudioTrack>();
-        //playing devices
-        private Dictionary<string, WaveOutEvent> outputs = new();
-        // File readers
-        private Dictionary<string, AudioFileReader> readers = new();
+        private Dictionary<string, List<WaveOutEvent>> outputs = new();
+        private Dictionary<string, List<AudioFileReader>> readers = new();
 
         public void AddSound(AudioTrack sound)
         {
             if (!sounds.ContainsKey(sound.Name))
-            {
                 sounds.Add(sound.Name, sound);
-            }
         }
-        public void PlaySound(string name)
+
+        public void PlaySound(string name, bool allowMultiple = false)
         {
-            try 
+            if (!sounds.ContainsKey(name)) return;
+
+            if (!allowMultiple && outputs.ContainsKey(name) && outputs[name].Count > 0)
+                return;
+
+            try
             {
-                if (!sounds.ContainsKey(name)) return;
-                if (outputs.ContainsKey(name))
-                    return;
-                AudioTrack sound = sounds[name]; 
-                string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, sound.FilePath); 
-                if (!File.Exists(fullPath)) return; // silently ignore
-                AudioFileReader reader = new AudioFileReader(fullPath); 
-                reader.Volume = sound.Volume;
+                AudioTrack sound = sounds[name];
+                string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, sound.FilePath);
+                if (!File.Exists(fullPath)) return;
+
+                AudioFileReader reader = new AudioFileReader(fullPath) { Volume = sound.Volume };
                 WaveOutEvent output = new WaveOutEvent();
                 output.Init(reader);
-               
-                readers[name] = reader;
-                outputs[name] = output;
                 output.Play();
 
+                
+                output.PlaybackStopped += (s, e) =>
+                {
+                    output.Dispose();
+                    reader.Dispose();
+                    if (outputs.ContainsKey(name)) outputs[name].Remove(output);
+                    if (readers.ContainsKey(name)) readers[name].Remove(reader);
+                };
 
+                if (!outputs.ContainsKey(name)) outputs[name] = new List<WaveOutEvent>();
+                if (!readers.ContainsKey(name)) readers[name] = new List<AudioFileReader>();
+
+                outputs[name].Add(output);
+                readers[name].Add(reader);
             }
             catch
             {
-                // Game should NEVER crash because of audio
+                
             }
         }
 
         public void Stop(string name)
         {
-            if (!outputs.ContainsKey(name))
-                return;
+            if (!outputs.ContainsKey(name)) return;
 
-            outputs[name].Stop();
-            outputs[name].Dispose();
-            readers[name].Dispose();
-
-            outputs.Remove(name);
-            readers.Remove(name);
+            foreach (var output in outputs[name])
+            {
+                output.Stop();
+                output.Dispose();
+            }
+            foreach (var reader in readers[name])
+            {
+                reader.Dispose();
+            }
+            outputs[name].Clear();
+            readers[name].Clear();
         }
 
         public void StopAll()
         {
-            foreach (var name in outputs.Keys.ToList())
-            {
+            foreach (var name in outputs.Keys)
                 Stop(name);
-            }
         }
+
         public void SetVolume(string name, float volume)
         {
             if (readers.ContainsKey(name))
             {
-                readers[name].Volume = volume;
+                foreach (var reader in readers[name])
+                    reader.Volume = volume;
             }
         }
     }

@@ -14,10 +14,10 @@ namespace Game.Systems
         {
             foreach (var obj in objects.OfType<IMovable>().Where(o => o.HasPhysics))
             {
-                // Apply gravity to vertical velocity
+                
                 obj.Velocity = new PointF(obj.Velocity.X, obj.Velocity.Y + Gravity);
 
-                // Update position
+                
                 if (obj is GameObject go)
                 {
                     go.Position = new PointF(

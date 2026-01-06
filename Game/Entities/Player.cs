@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Game.Entities
 {
-    public class Player : GameObject, ICollidable
+    public class Player : GameObject
     {
         public IMovement? Movement { get; set; }
         public JumpingMovement? JumpMovement { get; set; }
@@ -21,18 +21,13 @@ namespace Game.Entities
 
         private Image? originalSprite;
 
-
-
-
         public int framesWithoutBooster { get; set; } = 0;
         public float PushbackY { get; set; } = 0f;
         public string JumpMessage { get; set; } = "";
 
         public bool IsJumping => JumpMovement != null && JumpMovement.IsJumping;
 
-        private const int JumpFrameDelay = 6; // smaller = faster animation
-
-
+        private const int JumpFrameDelay = 6;
         private Image[] jumpFrames =
 {
            Properties.Resources.lifting_removebg_preview,
@@ -47,7 +42,7 @@ namespace Game.Entities
         {
             jumpFrameCounter++;
 
-            if (jumpFrameCounter >= 6) // speed control
+            if (jumpFrameCounter >= 6) 
             {
                 jumpFrameIndex++;
                 jumpFrameCounter = 0;
@@ -71,27 +66,23 @@ namespace Game.Entities
 
         public override void Update(GameTime gameTime)
         {
-            
-            // Keyboard move
             Movement?.Move(this, gameTime);
-
-            // Jump only via button
             JumpMovement?.Move(this, gameTime);
             if (IsJumping)
             {
-                UpdateJumpAnimation();   // jump frames change
+                UpdateJumpAnimation();  
             }
             else
             {
-                RestoreOriginalSprite(); // land hone ke baad wapas original image
+                RestoreOriginalSprite(); 
             }
 
-            // Pushback
+            
             Position = new PointF(Position.X + Velocity.X, Position.Y + Velocity.Y + PushbackY);
             PushbackY *= 0.7f;
             if (System.Math.Abs(PushbackY) < 0.1f) PushbackY = 0f;
 
-            // Clamp vertical
+            
             if (Position.Y < 0) Position = new PointF(Position.X, 0);
             if (Position.Y > 500) Position = new PointF(Position.X, 500);
 
@@ -100,7 +91,7 @@ namespace Game.Entities
 
         public override void OnCollision(GameObject other)
         {
-            // Ignore collisions while jumping
+            
             if (IsJumping) return;
 
             if (other is Enemy enemy)
@@ -118,7 +109,7 @@ namespace Game.Entities
 
                     AudioManager.Play("collision");
 
-                // 🔊 level fail sound (jab fuel zero ho)
+                
                 if (Fuel <= 0)
                 {
                     AudioManager.Stop("bgm");
@@ -140,7 +131,7 @@ namespace Game.Entities
             }
         }
 
-        // Jump only via button
+        
         public void TryJump()
         {
             if (Fuel >= 50)
@@ -163,9 +154,5 @@ namespace Game.Entities
                 t.Start();
             }
         }
-
-       
-
-
     }
 }

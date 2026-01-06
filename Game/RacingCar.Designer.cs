@@ -37,6 +37,8 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1178, 544);
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "RacingCar";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RacingCar";

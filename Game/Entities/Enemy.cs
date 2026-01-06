@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace Game.Entities
 {
-    public class Enemy : GameObject, ICollidable
+    public class Enemy : GameObject
     {
         public IMovement? Movement { get; set; }
         public string Tag { get; set; } = "Enemy";
