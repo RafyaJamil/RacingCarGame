@@ -76,9 +76,21 @@ namespace Game.Audios
 
 
 
-        public static void Stop(string name) => audio.Stop(name);
+        public static void Stop(string name)
+        {
+            audio.Stop(name);
 
-        public static void StopAll() => audio.StopAll();
+            if (name == "bgm")
+                bgmPlaying = false;
+        }
+
+
+        public static void StopAll()
+        {
+            audio.StopAll();
+            bgmPlaying = false;
+        }
+
         public static void SetVolume(string name, float volume) =>
             audio.SetVolume(name, volume);
     }

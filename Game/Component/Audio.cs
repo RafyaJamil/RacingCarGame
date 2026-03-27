@@ -67,18 +67,25 @@ namespace Game.Component
         {
             if (!outputs.ContainsKey(name)) return;
 
-            foreach (var output in outputs[name])
+            // COPY lists before iterating
+            var outputsCopy = outputs[name].ToList();
+            var readersCopy = readers[name].ToList();
+
+            foreach (var output in outputsCopy)
             {
                 output.Stop();
                 output.Dispose();
             }
-            foreach (var reader in readers[name])
+
+            foreach (var reader in readersCopy)
             {
                 reader.Dispose();
             }
+
             outputs[name].Clear();
             readers[name].Clear();
         }
+
 
         public void StopAll()
         {

@@ -150,7 +150,7 @@ namespace Game
             pauseButton.FlatStyle = FlatStyle.Flat;
             pauseButton.Font = new Font("Arial", 10, FontStyle.Bold);
             pauseButton.FlatAppearance.BorderSize = 0;
-            pauseButton.Click += (s, e) => TogglePause();
+            pauseButton.Click += (s, e) => PauseGame();
             Controls.Add(pauseButton);
         }
 
@@ -212,7 +212,7 @@ namespace Game
             timer.Start();
         }
 
-        void TogglePause()
+        void PauseGame()
         {
             if (!isPaused)
             {
@@ -306,7 +306,7 @@ namespace Game
 
 
 
-            DrawHUD(g);
+            DrawUI(g);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -368,14 +368,14 @@ namespace Game
             enemyCounter++;
             if (enemyCounter >= enemyInterval)
             {
-                SpawnEnemy();
+                AddEnemy();
                 enemyCounter = 0;
             }
 
             boosterCounter++;
             if (boosterCounter >= boosterInterval)
             {
-                SpawnBooster();
+                AddBooster();
                 boosterCounter = 0;
             }
 
@@ -404,7 +404,7 @@ namespace Game
                 g.DrawImage(roadImage, x, y + (int)roadOffsetY, width, imgH);
         }
 
-        void SpawnEnemy()
+        void AddEnemy()
         {
             int lane = random.Next(3);
             game.AddObject(new Enemy
@@ -416,7 +416,7 @@ namespace Game
             });
         }
 
-        void SpawnBooster()
+        void AddBooster()
         {
             int lane = random.Next(3);
             game.AddObject(new EnergyBooster
@@ -427,7 +427,7 @@ namespace Game
                 Sprite = Resources.energy
             });
         }
-        void DrawHUD(Graphics g)
+        void DrawUI(Graphics g)
         {
 
             float hudX = roadX + roadWidth + 30;
