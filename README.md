@@ -115,7 +115,7 @@ RacingCarGame/
 
 ## Prerequisites
 
-- Visual Studio 2022 (or later)
+- Visual Studio 2022
 - .NET SDK
 - Windows Operating System
 
@@ -141,8 +141,8 @@ git clone https://github.com/RafyaJamil/racing-car-game.git
 |------|--------|
 | ← | Move Left |
 | → | Move Right |
-| ↑ | Move Forward / Jump (if applicable) |
-| ↓ | Move Backward (if applicable) |
+| ↑ | Move Forward  |
+| ↓ | Move Backward |
 
 ---
 
